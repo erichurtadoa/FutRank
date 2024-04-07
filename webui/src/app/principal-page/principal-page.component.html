@@ -1,0 +1,34 @@
+<div class="container">
+  <mat-card>
+      <mat-card-content>
+        <h2>Lista de Partidos</h2>
+        <mat-list>
+          <mat-list-item *ngFor="let partido of dataSource" class="list-item">
+            <!-- Primera fila -->
+            <div class="row">
+                <div class="team">{{ partido.equipoLocal }} - {{ partido.equipoVisitante }}</div>
+            </div>
+              <!-- Segunda fila -->
+              <div class="row">
+                <div class="column">
+                  <div class="competition">{{ partido.competicion }}</div>
+                  <div style="padding-top: 10px">{{ partido.fecha }}</div>
+                </div>
+                <div class="column-center">
+                  <div class="note">Note: {{ partido.nota }}</div>
+                  <div class="votes" style="padding-top: 10px">({{ partido.numeroVotos }} votes)</div>
+                </div>
+                <div class="column-center">
+                  <div class="user-note">Your note: 7.5</div>
+                </div>
+                <div class="column-right">
+                  <button mat-button>
+                    <mat-icon>arrow_forward</mat-icon>
+                  </button>
+                </div>
+              </div>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+  </mat-card>
+</div>

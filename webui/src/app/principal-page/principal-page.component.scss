@@ -1,0 +1,75 @@
+.container {
+  display: flex;
+  justify-content: center;
+  height: calc(100vh - 64px);
+}
+
+.mat-mdc-card-content {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #fffdfd;
+  width: 70vw;
+  overflow: auto;
+}
+
+.mat-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 15px;
+}
+
+.list-item {
+  border-bottom: 1px solid rgb(152, 127, 187);
+  border-radius: 4px;
+  padding: 10px;
+  background-color: azure;
+}
+
+.row {
+  display: flex;
+  padding: 5px;
+}
+
+.column {
+  flex: 1;
+  padding: 0 10px;
+}
+
+.column-center {
+  flex: 1;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.column-right {
+  flex: 1;
+  padding: 0 10px;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.mat-list-item .column {
+  width: 500px;
+}
+.team {
+  font-weight: bold;
+}
+
+.votes-column {
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.user-note-column {
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.mat-mdc-card-content>:last-child:not(.mat-mdc-card-footer) {
+  padding: 46px;
+}
