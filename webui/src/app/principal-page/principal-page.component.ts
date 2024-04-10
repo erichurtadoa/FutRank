@@ -1,9 +1,4 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MatCardModule } from '@angular/material/card';
-import { MatListModule } from '@angular/material/list';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
 
 const dummyData = [
   {
@@ -82,8 +77,6 @@ const dummyData = [
 
 @Component({
   selector: 'app-principal-page',
-  standalone: true,
-  imports: [CommonModule, MatCardModule, MatListModule, MatIconModule, MatButtonModule],
   templateUrl: './principal-page.component.html',
   styleUrl: './principal-page.component.scss'
 })
