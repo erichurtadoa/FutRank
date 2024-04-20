@@ -5,8 +5,8 @@
   <div class="left-buttons">
     <button mat-button [matMenuTriggerFor]="menu">Ranking</button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item>Top Matches</button>
-      <button mat-menu-item>Top Clubes</button>
+      <button mat-menu-item (click)="navigateToMatches()">Top Matches</button>
+      <button mat-menu-item (click)="navigateToClubes()">Top Clubes</button>
     </mat-menu>
     <button mat-button color="primary">Community</button>
   </div>

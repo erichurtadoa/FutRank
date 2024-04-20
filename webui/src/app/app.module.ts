@@ -1,6 +1,7 @@
 import { AppComponent } from './app.component';
 import { ScreenManagerComponent } from './screen-manager/screen-manager.component';
 import { PrincipalPageComponent } from './principal-page/principal-page.component';
+import { ClubRankPageComponent } from './club-rank-page/club-rank-page.component';
 
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -20,7 +21,8 @@ import { routes } from './app.routes';
   declarations: [
     AppComponent,
     ScreenManagerComponent,
-    PrincipalPageComponent
+    PrincipalPageComponent,
+    ClubRankPageComponent
   ],
   imports: [
     CommonModule,

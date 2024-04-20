@@ -1,0 +1,39 @@
+<div class="container">
+  <mat-card>
+      <mat-card-content>
+        <h2>Clubs</h2>
+        <mat-list>
+          <mat-list-item *ngFor="let partido of dataSource" class="list-item">
+            <!-- Primera fila -->
+            <div class="row">
+                <div class="team">{{ partido.club }}</div>
+            </div>
+              <!-- Segunda fila -->
+              <div class="row">
+                <div class="column">
+                  <div class="competition">{{ partido.country }}</div>
+                </div>
+                <div class="column-center">
+                  <div class="competition">Popularity: {{ partido.popularity }}</div>
+                </div>
+                <div class="column-center">
+                  <button mat-button>
+                    <mat-icon>arrow_upward</mat-icon>
+                  </button>
+                </div>
+                <div class="column-center">
+                  <button mat-button>
+                    <mat-icon>arrow_downward</mat-icon>
+                  </button>
+                </div>
+                <div class="column-right">
+                  <button mat-button>
+                    <mat-icon>arrow_forward</mat-icon>
+                  </button>
+                </div>
+              </div>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+  </mat-card>
+</div>

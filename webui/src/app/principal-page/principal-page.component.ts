@@ -80,6 +80,7 @@ const dummyData = [
   templateUrl: './principal-page.component.html',
   styleUrl: './principal-page.component.scss'
 })
+
 export class PrincipalPageComponent {
   dataSource = dummyData;
 }
