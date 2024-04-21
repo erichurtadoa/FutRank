@@ -1,4 +1,5 @@
-﻿using FutRank.Models;
+﻿using FutRank.Dtos;
+using FutRank.Models;
 using FutRank.Services.Implementation;
 using FutRank.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -18,7 +19,7 @@ namespace FutRank.Controllers
         }
 
         [HttpGet("Clubs")]
-        public IEnumerable<Club> GetClubs()
+        public IEnumerable<ClubDto> GetClubs()
         {
             return _clubService.GetClubsAsync();
         }

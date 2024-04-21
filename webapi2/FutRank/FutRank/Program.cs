@@ -1,3 +1,4 @@
+using FutRank.Mappers;
 using FutRank.Models;
 using FutRank.Repositories.Implementation;
 using FutRank.Repositories.Interfaces;
@@ -17,6 +18,18 @@ builder.Services.AddScoped<IVenueService, VenueService>();
 builder.Services.AddScoped<IClubService, ClubService>();
 builder.Services.AddScoped<IVenueRepository, VenueRepository>();
 builder.Services.AddScoped<IClubRepository, ClubRepository>();
+builder.Services.AddScoped<ClubMappper>();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngularDevServer",
+        builder =>
+        {
+            builder.WithOrigins("http://localhost:4200") // Reemplaza esto con la URL de tu aplicación Angular
+                   .AllowAnyHeader()
+                   .AllowAnyMethod();
+        });
+});
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<SampleDBContext>(options => options.UseSqlServer(connectionString));
@@ -24,6 +37,8 @@ builder.Services.AddDbContext<SampleDBContext>(options => options.UseSqlServer(c
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+app.UseCors("AllowAngularDevServer");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

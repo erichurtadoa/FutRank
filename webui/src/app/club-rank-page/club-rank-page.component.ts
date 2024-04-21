@@ -1,47 +1,6 @@
-import { Component } from '@angular/core';
-
-const dummyData = [
-  {
-    club: "Equipo A",
-    country: "Country",
-    popularity: "2",
-  },
-  {
-    club: "Equipo A",
-    country: "Country",
-    popularity: "2",
-  },
-  {
-    club: "Equipo A",
-    country: "Country",
-    popularity: "2",
-  },
-  {
-    club: "Equipo A",
-    country: "Country",
-    popularity: "2",
-  },
-  {
-    club: "Equipo A",
-    country: "Country",
-    popularity: "2",
-  },
-  {
-    club: "Equipo A",
-    country: "Country",
-    popularity: "2",
-  },
-  {
-    club: "Equipo A",
-    country: "Country",
-    popularity: "2",
-  },
-  {
-    club: "Equipo A",
-    country: "Country",
-    popularity: "2",
-  },
-];
+import { Component, OnInit } from '@angular/core';
+import { Club } from '../models/club';
+import { ClubService } from '../services/club.service';
 
 @Component({
   selector: 'app-club-rank-page',
@@ -49,6 +8,24 @@ const dummyData = [
   styleUrl: './club-rank-page.component.scss'
 })
 
-export class ClubRankPageComponent {
-  dataSource = dummyData;
+export class ClubRankPageComponent implements OnInit {
+  dataSource: Club[] = [];
+
+  constructor(private clubService: ClubService) { }
+
+  ngOnInit(): void {
+    this.getClubs();
+  }
+
+  getClubs(): void {
+    this.clubService.getClubs()
+      .subscribe(
+        (data: Club[]) => {
+        this.dataSource = data;
+      },
+      error => {
+        console.log(error);
+        console.error('Error al obtener los clubs:', error);
+      });
+  }
 }

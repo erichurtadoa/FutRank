@@ -1,9 +1,9 @@
-﻿using FutRank.Models;
+﻿using FutRank.Dtos;
 
 namespace FutRank.Services.Interfaces
 {
     public interface IClubService
     {
-        IEnumerable<Club> GetClubsAsync();
+        IEnumerable<ClubDto> GetClubsAsync();
     }
 }

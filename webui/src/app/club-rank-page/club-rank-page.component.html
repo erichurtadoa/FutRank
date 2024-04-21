@@ -3,18 +3,18 @@
       <mat-card-content>
         <h2>Clubs</h2>
         <mat-list>
-          <mat-list-item *ngFor="let partido of dataSource" class="list-item">
+          <mat-list-item *ngFor="let club of dataSource" class="list-item">
             <!-- Primera fila -->
             <div class="row">
-                <div class="team">{{ partido.club }}</div>
+                <div class="team">{{ club.name }}</div>
             </div>
               <!-- Segunda fila -->
               <div class="row">
                 <div class="column">
-                  <div class="competition">{{ partido.country }}</div>
+                  <div class="competition">{{ club.country }}</div>
                 </div>
                 <div class="column-center">
-                  <div class="competition">Popularity: {{ partido.popularity }}</div>
+                  <div class="competition">Popularity: {{ club.founded }}</div>
                 </div>
                 <div class="column-center">
                   <button mat-button>

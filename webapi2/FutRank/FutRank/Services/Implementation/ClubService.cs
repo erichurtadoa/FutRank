@@ -1,4 +1,5 @@
-﻿using FutRank.Models;
+﻿using FutRank.Dtos;
+using FutRank.Mappers;
 using FutRank.Repositories.Interfaces;
 using FutRank.Services.Interfaces;
 
@@ -7,15 +8,19 @@ namespace FutRank.Services.Implementation
     public class ClubService : IClubService
     {
         private readonly IClubRepository _clubRepository;
+        private readonly ClubMappper _mapper;
 
-        public ClubService(IClubRepository clubRepository)
+        public ClubService(IClubRepository clubRepository, ClubMappper mapper)
         {
             _clubRepository = clubRepository;
+            _mapper = mapper;
         }
 
-        public IEnumerable<Club> GetClubsAsync()
+        public IEnumerable<ClubDto> GetClubsAsync()
         {
-            return _clubRepository.GetClubsAsync();
+            var clubs = _clubRepository.GetClubsAsync();
+            return clubs.Select(c => _mapper.MapClubtoDto(c));
+
         }
     }
 }
