@@ -3,48 +3,80 @@
   "WorkspaceRootPath": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|c:\\users\\eric_\\onedrive\\desktop\\ifdb\\ifdb\\webapi2\\futrank\\futrank\\models\\club.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|solutionrelative:futrank\\models\\club.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|c:\\users\\eric_\\onedrive\\desktop\\ifdb\\ifdb\\webapi2\\futrank\\futrank\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|solutionrelative:futrank\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|c:\\users\\eric_\\onedrive\\desktop\\ifdb\\ifdb\\webapi2\\futrank\\futrank\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|solutionrelative:futrank\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|c:\\users\\eric_\\onedrive\\desktop\\ifdb\\ifdb\\webapi2\\futrank\\futrank\\repositories\\clubrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|solutionrelative:futrank\\repositories\\clubrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|c:\\users\\eric_\\onedrive\\desktop\\ifdb\\ifdb\\webapi2\\futrank\\futrank\\repositories\\iclubrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|solutionrelative:futrank\\repositories\\iclubrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Migrations\\20240421124000_LeagueTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FutRank\\Migrations\\20240421124000_LeagueTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|c:\\users\\eric_\\onedrive\\desktop\\ifdb\\ifdb\\webapi2\\futrank\\futrank\\models\\sampledbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|solutionrelative:futrank\\models\\sampledbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|c:\\users\\eric_\\onedrive\\desktop\\ifdb\\ifdb\\webapi2\\futrank\\futrank\\models\\league.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|solutionrelative:futrank\\models\\league.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|c:\\users\\eric_\\onedrive\\desktop\\ifdb\\ifdb\\webapi2\\futrank\\futrank\\models\\club.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|solutionrelative:futrank\\models\\club.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|c:\\users\\eric_\\onedrive\\desktop\\ifdb\\ifdb\\webapi2\\futrank\\futrank\\models\\country.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|solutionrelative:futrank\\models\\country.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|c:\\users\\eric_\\onedrive\\desktop\\ifdb\\ifdb\\webapi2\\futrank\\futrank\\controllers\\clubcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|solutionrelative:futrank\\controllers\\clubcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|c:\\users\\eric_\\onedrive\\desktop\\ifdb\\ifdb\\webapi2\\futrank\\futrank\\models\\venue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|solutionrelative:futrank\\models\\venue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|c:\\users\\eric_\\onedrive\\desktop\\ifdb\\ifdb\\webapi2\\futrank\\futrank\\controllers\\venuecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|solutionrelative:futrank\\controllers\\venuecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|c:\\users\\eric_\\onedrive\\desktop\\ifdb\\ifdb\\webapi2\\futrank\\futrank\\repositories\\implementation\\venuerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|solutionrelative:futrank\\repositories\\implementation\\venuerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|c:\\users\\eric_\\onedrive\\desktop\\ifdb\\ifdb\\webapi2\\futrank\\futrank\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|solutionrelative:futrank\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|c:\\users\\eric_\\onedrive\\desktop\\ifdb\\ifdb\\webapi2\\futrank\\futrank\\services\\implementation\\venueservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|solutionrelative:futrank\\services\\implementation\\venueservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|c:\\users\\eric_\\onedrive\\desktop\\ifdb\\ifdb\\webapi2\\futrank\\futrank\\services\\implementation\\clubservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|solutionrelative:futrank\\services\\implementation\\clubservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|c:\\users\\eric_\\onedrive\\desktop\\ifdb\\ifdb\\webapi2\\futrank\\futrank\\services\\interfaces\\iclubservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|solutionrelative:futrank\\services\\interfaces\\iclubservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|c:\\users\\eric_\\onedrive\\desktop\\ifdb\\ifdb\\webapi2\\futrank\\futrank\\services\\interfaces\\ivenueservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|solutionrelative:futrank\\services\\interfaces\\ivenueservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|c:\\users\\eric_\\onedrive\\desktop\\ifdb\\ifdb\\webapi2\\futrank\\futrank\\repositories\\interfaces\\ivenuerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|solutionrelative:futrank\\repositories\\interfaces\\ivenuerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|c:\\users\\eric_\\onedrive\\desktop\\ifdb\\ifdb\\webapi2\\futrank\\futrank\\repositories\\interfaces\\iclubrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|solutionrelative:futrank\\repositories\\interfaces\\iclubrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|c:\\users\\eric_\\onedrive\\desktop\\ifdb\\ifdb\\webapi2\\futrank\\futrank\\repositories\\implementation\\clubrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|solutionrelative:futrank\\repositories\\implementation\\clubrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|c:\\users\\eric_\\onedrive\\desktop\\ifdb\\ifdb\\webapi2\\futrank\\futrank\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|solutionrelative:futrank\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|c:\\users\\eric_\\onedrive\\desktop\\ifdb\\ifdb\\webapi2\\futrank\\futrank\\repositories\\venuerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|solutionrelative:futrank\\repositories\\venuerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|c:\\users\\eric_\\onedrive\\desktop\\ifdb\\ifdb\\webapi2\\futrank\\futrank\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|solutionrelative:futrank\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|c:\\users\\eric_\\onedrive\\desktop\\ifdb\\ifdb\\webapi2\\futrank\\futrank\\repositories\\ivenuerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|solutionrelative:futrank\\repositories\\ivenuerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3C4B0725-AE69-4381-817B-91231DA86419}|FutRank\\FutRank.csproj|c:\\users\\eric_\\onedrive\\desktop\\ifdb\\ifdb\\webapi2\\futrank\\futrank\\futrank.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
@@ -58,84 +90,162 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IClubRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Repositories\\IClubRepository.cs",
-              "RelativeDocumentMoniker": "FutRank\\Repositories\\IClubRepository.cs",
-              "ToolTip": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Repositories\\IClubRepository.cs",
-              "RelativeToolTip": "FutRank\\Repositories\\IClubRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAQAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-20T16:58:21.392Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ClubRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Repositories\\ClubRepository.cs",
-              "RelativeDocumentMoniker": "FutRank\\Repositories\\ClubRepository.cs",
-              "ToolTip": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Repositories\\ClubRepository.cs",
-              "RelativeToolTip": "FutRank\\Repositories\\ClubRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAABHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-20T16:57:49.933Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Club.cs",
-              "DocumentMoniker": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Models\\Club.cs",
-              "RelativeDocumentMoniker": "FutRank\\Models\\Club.cs",
-              "ToolTip": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Models\\Club.cs",
-              "RelativeToolTip": "FutRank\\Models\\Club.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAvAAAA",
+              "Title": "20240421124000_LeagueTable.cs",
+              "DocumentMoniker": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Migrations\\20240421124000_LeagueTable.cs",
+              "RelativeDocumentMoniker": "FutRank\\Migrations\\20240421124000_LeagueTable.cs",
+              "ToolTip": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Migrations\\20240421124000_LeagueTable.cs",
+              "RelativeToolTip": "FutRank\\Migrations\\20240421124000_LeagueTable.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAgwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-20T16:51:08.385Z",
+              "WhenOpened": "2024-04-21T12:40:00.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "League.cs",
+              "DocumentMoniker": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Models\\League.cs",
+              "RelativeDocumentMoniker": "FutRank\\Models\\League.cs",
+              "ToolTip": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Models\\League.cs",
+              "RelativeToolTip": "FutRank\\Models\\League.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T12:34:42.51Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Country.cs",
+              "DocumentMoniker": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Models\\Country.cs",
+              "RelativeDocumentMoniker": "FutRank\\Models\\Country.cs",
+              "ToolTip": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Models\\Country.cs",
+              "RelativeToolTip": "FutRank\\Models\\Country.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T11:07:46.648Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ClubController.cs",
+              "DocumentMoniker": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Controllers\\ClubController.cs",
+              "RelativeDocumentMoniker": "FutRank\\Controllers\\ClubController.cs",
+              "ToolTip": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Controllers\\ClubController.cs",
+              "RelativeToolTip": "FutRank\\Controllers\\ClubController.cs",
+              "ViewState": "AQIAADcAAAAAAAAAAAAmwC4AAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T10:48:30.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ClubService.cs",
+              "DocumentMoniker": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Services\\Implementation\\ClubService.cs",
+              "RelativeDocumentMoniker": "FutRank\\Services\\Implementation\\ClubService.cs",
+              "ToolTip": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Services\\Implementation\\ClubService.cs",
+              "RelativeToolTip": "FutRank\\Services\\Implementation\\ClubService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T10:44:00.987Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "VenueService.cs",
+              "DocumentMoniker": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Services\\Implementation\\VenueService.cs",
+              "RelativeDocumentMoniker": "FutRank\\Services\\Implementation\\VenueService.cs",
+              "ToolTip": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Services\\Implementation\\VenueService.cs",
+              "RelativeToolTip": "FutRank\\Services\\Implementation\\VenueService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T10:43:45.536Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IClubService.cs",
+              "DocumentMoniker": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Services\\Interfaces\\IClubService.cs",
+              "RelativeDocumentMoniker": "FutRank\\Services\\Interfaces\\IClubService.cs",
+              "ToolTip": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Services\\Interfaces\\IClubService.cs",
+              "RelativeToolTip": "FutRank\\Services\\Interfaces\\IClubService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T10:40:44.433Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "VenueRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Repositories\\VenueRepository.cs",
-              "RelativeDocumentMoniker": "FutRank\\Repositories\\VenueRepository.cs",
-              "ToolTip": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Repositories\\VenueRepository.cs",
-              "RelativeToolTip": "FutRank\\Repositories\\VenueRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
+              "DocumentMoniker": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Repositories\\Implementation\\VenueRepository.cs",
+              "RelativeDocumentMoniker": "FutRank\\Repositories\\Implementation\\VenueRepository.cs",
+              "ToolTip": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Repositories\\Implementation\\VenueRepository.cs",
+              "RelativeToolTip": "FutRank\\Repositories\\Implementation\\VenueRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-20T16:32:35.219Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Program.cs",
               "RelativeDocumentMoniker": "FutRank\\Program.cs",
               "ToolTip": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Program.cs",
               "RelativeToolTip": "FutRank\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA+AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-20T16:11:00.307Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
+              "Title": "VenueController.cs",
+              "DocumentMoniker": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Controllers\\VenueController.cs",
+              "RelativeDocumentMoniker": "FutRank\\Controllers\\VenueController.cs",
+              "ToolTip": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Controllers\\VenueController.cs",
+              "RelativeToolTip": "FutRank\\Controllers\\VenueController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-20T15:04:06.906Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "SampleDBContext.cs",
               "DocumentMoniker": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Models\\SampleDBContext.cs",
               "RelativeDocumentMoniker": "FutRank\\Models\\SampleDBContext.cs",
               "ToolTip": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Models\\SampleDBContext.cs",
               "RelativeToolTip": "FutRank\\Models\\SampleDBContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAawBoAAAAxAAAA",
+              "ViewState": "AQIAABAAAAAAAAAAAAArwCsAAAA/AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-20T16:09:32.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Club.cs",
+              "DocumentMoniker": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Models\\Club.cs",
+              "RelativeDocumentMoniker": "FutRank\\Models\\Club.cs",
+              "ToolTip": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Models\\Club.cs",
+              "RelativeToolTip": "FutRank\\Models\\Club.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBIAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-20T16:51:08.385Z",
               "EditorCaption": ""
             },
             {
@@ -146,45 +256,71 @@
               "RelativeDocumentMoniker": "FutRank\\Models\\Venue.cs",
               "ToolTip": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Models\\Venue.cs",
               "RelativeToolTip": "FutRank\\Models\\Venue.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAApAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBMAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-20T16:05:55.263Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
+              "Title": "IVenueService.cs",
+              "DocumentMoniker": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Services\\Interfaces\\IVenueService.cs",
+              "RelativeDocumentMoniker": "FutRank\\Services\\Interfaces\\IVenueService.cs",
+              "ToolTip": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Services\\Interfaces\\IVenueService.cs",
+              "RelativeToolTip": "FutRank\\Services\\Interfaces\\IVenueService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T10:39:53.316Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IClubRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Repositories\\Interfaces\\IClubRepository.cs",
+              "RelativeDocumentMoniker": "FutRank\\Repositories\\Interfaces\\IClubRepository.cs",
+              "ToolTip": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Repositories\\Interfaces\\IClubRepository.cs",
+              "RelativeToolTip": "FutRank\\Repositories\\Interfaces\\IClubRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAYAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-20T16:58:21.392Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ClubRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Repositories\\Implementation\\ClubRepository.cs",
+              "RelativeDocumentMoniker": "FutRank\\Repositories\\Implementation\\ClubRepository.cs",
+              "ToolTip": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Repositories\\Implementation\\ClubRepository.cs",
+              "RelativeToolTip": "FutRank\\Repositories\\Implementation\\ClubRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-20T16:57:49.933Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "FutRank.csproj",
               "DocumentMoniker": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\FutRank.csproj",
               "RelativeDocumentMoniker": "FutRank\\FutRank.csproj",
               "ToolTip": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\FutRank.csproj",
               "RelativeToolTip": "FutRank\\FutRank.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAKAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2024-04-20T15:54:09.403Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "WeatherForecastController.cs",
-              "DocumentMoniker": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Controllers\\WeatherForecastController.cs",
-              "RelativeDocumentMoniker": "FutRank\\Controllers\\WeatherForecastController.cs",
-              "ToolTip": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Controllers\\WeatherForecastController.cs",
-              "RelativeToolTip": "FutRank\\Controllers\\WeatherForecastController.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAQwCMAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-20T15:04:06.906Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "IVenueRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Repositories\\IVenueRepository.cs",
-              "RelativeDocumentMoniker": "FutRank\\Repositories\\IVenueRepository.cs",
-              "ToolTip": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Repositories\\IVenueRepository.cs",
-              "RelativeToolTip": "FutRank\\Repositories\\IVenueRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Repositories\\Interfaces\\IVenueRepository.cs",
+              "RelativeDocumentMoniker": "FutRank\\Repositories\\Interfaces\\IVenueRepository.cs",
+              "ToolTip": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Repositories\\Interfaces\\IVenueRepository.cs",
+              "RelativeToolTip": "FutRank\\Repositories\\Interfaces\\IVenueRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-20T16:36:50.088Z",
@@ -192,7 +328,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 17,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "FutRank\\Properties\\launchSettings.json",
@@ -205,7 +341,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 18,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\appsettings.Development.json",
               "RelativeDocumentMoniker": "FutRank\\appsettings.Development.json",

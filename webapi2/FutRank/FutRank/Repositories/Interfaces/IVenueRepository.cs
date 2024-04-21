@@ -1,6 +1,6 @@
 ﻿using FutRank.Models;
 
-namespace FutRank.Repositories
+namespace FutRank.Repositories.Interfaces
 {
     public interface IVenueRepository
     {

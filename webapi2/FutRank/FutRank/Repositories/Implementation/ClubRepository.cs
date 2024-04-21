@@ -1,15 +1,16 @@
 ﻿using FutRank.Models;
+using FutRank.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace FutRank.Repositories
+namespace FutRank.Repositories.Implementation
 {
     public class ClubRepository : IClubRepository
     {
         private readonly SampleDBContext _context;
 
-        public ClubRepository(SampleDBContext context) 
+        public ClubRepository(SampleDBContext context)
         {
             _context = context;
         }

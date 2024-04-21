@@ -1,5 +1,8 @@
 using FutRank.Models;
-using FutRank.Repositories;
+using FutRank.Repositories.Implementation;
+using FutRank.Repositories.Interfaces;
+using FutRank.Services.Implementation;
+using FutRank.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +13,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
+builder.Services.AddScoped<IVenueService, VenueService>();
+builder.Services.AddScoped<IClubService, ClubService>();
 builder.Services.AddScoped<IVenueRepository, VenueRepository>();
 builder.Services.AddScoped<IClubRepository, ClubRepository>();
 
