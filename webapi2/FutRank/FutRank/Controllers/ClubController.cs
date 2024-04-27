@@ -25,10 +25,18 @@ namespace FutRank.Controllers
         }
 
         [HttpPost("League")]
-        public IActionResult ProcessLeague([FromBody] LeagueRequest leagueRequest)
+        public IActionResult ProcessLeague([FromBody] Fixture[] leagueRequest)
         {
             try
             {
+                var processed = new List<Fixture>();
+                processed = leagueRequest.ToList();
+
+                processed.Select(x =>
+                {
+
+                });
+
                 // Deserialize the incoming JSON
                 var league = leagueRequest.League;
                 var leagueObject = new LeagueData
@@ -78,26 +86,75 @@ namespace FutRank.Controllers
             }
         }
 
-        public class LeagueRequest
+        public class Fixture
         {
-            public LeagueData League { get; set; }
-            public Country Country { get; set; }
-            public List<SeasonData> Seasons { get; set; }
+            public int Id { get; set; }
+            public string Referee { get; set; }
+            public string Timezone { get; set; }
+            public DateTime Date { get; set; }
+            public long Timestamp { get; set; }
+            public Periods Periods { get; set; }
+            public Venue Venue { get; set; }
+            public Status Status { get; set; }
         }
 
-        public class LeagueData
+        public class Periods
+        {
+            public long First { get; set; }
+            public long Second { get; set; }
+        }
+
+        public class Venue
         {
             public int Id { get; set; }
             public string Name { get; set; }
-            public string Type { get; set; }
-            public string Logo { get; set; }
+            public string City { get; set; }
         }
 
-        public class SeasonData
+        public class Status
         {
-            public int Year { get; set; }
-            public string Start { get; set; }
-            public string End { get; set; }
+            public string Long { get; set; }
+            public string Short { get; set; }
+            public int Elapsed { get; set; }
+        }
+
+        public class League
+        {
+            public int Id { get; set; }
+            public string Name { get; set; }
+            public string Country { get; set; }
+            public string Logo { get; set; }
+            public string Flag { get; set; }
+            public int Season { get; set; }
+            public string Round { get; set; }
+        }
+
+        public class Teams
+        {
+            public Team Home { get; set; }
+            public Team Away { get; set; }
+        }
+
+        public class Team
+        {
+            public int Id { get; set; }
+            public string Name { get; set; }
+            public string Logo { get; set; }
+            public bool Winner { get; set; }
+        }
+
+        public class Goals
+        {
+            public int Home { get; set; }
+            public int Away { get; set; }
+        }
+
+        public class Score
+        {
+            public Goals Halftime { get; set; }
+            public Goals Fulltime { get; set; }
+            public Goals Extratime { get; set; }
+            public Goals Penalty { get; set; }
         }
     }
 }

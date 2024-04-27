@@ -13,6 +13,7 @@ namespace FutRank.Models
         public virtual DbSet<Club> Clubs { get; set; }
         public virtual DbSet<Country> Countries { get; set; }
         public virtual DbSet<League> Leagues { get; set; }
+        public virtual DbSet<Standing> Standings { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -45,6 +46,17 @@ namespace FutRank.Models
                 entity.HasOne(v => v.Country)
                 .WithMany()
                 .HasForeignKey(v => v.CountryName);
+            });
+            OnModelCreatingPartial(modelBuilder);
+
+            modelBuilder.Entity<Standing>(entity => {
+                entity.HasKey(k => new { k.LeagueId, k.Season, k.ClubId });
+                entity.HasOne(v => v.League)
+                .WithMany(l => l.Standings)
+                .HasForeignKey(v => new { v.LeagueId, v.Season });
+                entity.HasOne(v => v.Club)
+                .WithMany(c => c.Standings)
+                .HasForeignKey(v => v.ClubId);
             });
             OnModelCreatingPartial(modelBuilder);
         }

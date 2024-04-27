@@ -21,5 +21,7 @@ namespace FutRank.Models
         [ForeignKey("Venue")]
         public int VenueId { get; set; }
         public Venue Venue { get; set; }
+
+        public virtual ICollection<Standing> Standings { get; set; }
     }
 }

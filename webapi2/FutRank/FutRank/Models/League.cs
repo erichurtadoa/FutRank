@@ -18,5 +18,7 @@ namespace FutRank.Models
         [ForeignKey("Country")]
         public string CountryName { get; set; }
         public Country Country { get; set; }
+
+        public virtual ICollection<Standing> Standings { get; set; }
     }
 }
