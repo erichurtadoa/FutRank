@@ -59,6 +59,23 @@ namespace FutRank.Models
                 .HasForeignKey(v => v.ClubId);
             });
             OnModelCreatingPartial(modelBuilder);
+
+            modelBuilder.Entity<Fixture>(entity => {
+                entity.HasKey(k => k.Id);
+                entity.HasOne(v => v.League)
+                .WithMany(l => l.Fixtures)
+                .HasForeignKey(v => new { v.LeagueId, v.Season });
+                entity.HasOne(v => v.HomeClub)
+                .WithMany(c => c.HomeFixtures)
+                .HasForeignKey(v => v.HomeTeamId);
+                entity.HasOne(v => v.AwayClub)
+                .WithMany(c => c.AwayFixtures)
+                .HasForeignKey(v => v.AwayTeamId);
+                entity.HasOne(v => v.Venue)
+                .WithMany()
+                .HasForeignKey(v => v.VenueId);
+            });
+            OnModelCreatingPartial(modelBuilder);
         }
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }

@@ -20,5 +20,7 @@ namespace FutRank.Models
         public Country Country { get; set; }
 
         public virtual ICollection<Standing> Standings { get; set; }
+
+        public virtual ICollection<Fixture> Fixtures { get; set; }
     }
 }

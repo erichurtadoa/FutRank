@@ -23,5 +23,8 @@ namespace FutRank.Models
         public Venue Venue { get; set; }
 
         public virtual ICollection<Standing> Standings { get; set; }
+
+        public virtual ICollection<Fixture> HomeFixtures { get; set; }
+        public virtual ICollection<Fixture> AwayFixtures { get; set; }
     }
 }

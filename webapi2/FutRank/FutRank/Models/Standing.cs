@@ -12,9 +12,8 @@ namespace FutRank.Models
         [Key]
         public int ClubId { get; set; }
         public int Rank { get; set; }
-        public string Description { get; set; };
+        public string Description { get; set; }
 
-        [ForeignKey("LeagueId+Season")]
         public virtual League League { get; set; }
 
         [ForeignKey("ClubId")]

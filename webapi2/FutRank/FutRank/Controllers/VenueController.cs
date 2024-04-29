@@ -15,7 +15,7 @@ namespace FutRank.Controllers
             _venueService = venueService;
         }
 
-        [HttpGet("Venues")]
+        [HttpGet("All")]
         public IEnumerable<Venue> Get()
         {
             return _venueService.GetVenuesAsync();
