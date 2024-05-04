@@ -17,9 +17,10 @@ namespace FutRank.Repositories.Implementation
 
         public IEnumerable<Club> GetClubsAsync()
         {
-            return _context.Clubs.Include(club => club.Venue)
+            var countries =  _context.Clubs.Include(club => club.Venue)
                 .Include(club => club.Country)
                 .ToList();
+            return countries;
         }
     }
 }

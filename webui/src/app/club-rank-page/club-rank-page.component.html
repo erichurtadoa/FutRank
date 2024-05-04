@@ -1,39 +1,42 @@
 <div class="container">
   <mat-card>
-      <mat-card-content>
-        <h2>Clubs</h2>
-        <mat-list>
-          <mat-list-item *ngFor="let club of dataSource" class="list-item">
-            <!-- Primera fila -->
-            <div class="row">
-                <div class="team">{{ club.name }}</div>
-            </div>
-              <!-- Segunda fila -->
-              <div class="row">
-                <div class="column">
-                  <div class="competition">{{ club.country }}</div>
-                </div>
-                <div class="column-center">
-                  <div class="competition">Popularity: {{ club.founded }}</div>
-                </div>
-                <div class="column-center">
-                  <button mat-button>
-                    <mat-icon>arrow_upward</mat-icon>
-                  </button>
-                </div>
-                <div class="column-center">
-                  <button mat-button>
-                    <mat-icon>arrow_downward</mat-icon>
-                  </button>
-                </div>
-                <div class="column-right">
-                  <button mat-button>
-                    <mat-icon>arrow_forward</mat-icon>
-                  </button>
-                </div>
-              </div>
-          </mat-list-item>
-        </mat-list>
-      </mat-card-content>
+    <mat-card-content>
+      <h2>Clubs</h2>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Logo</th>
+              <th>Name</th>
+              <th>Country</th>
+              <th>Popularity</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let club of dataSource">
+              <td><img [src]="club.logo" style="height: 88px;"></td>
+              <td>{{ club.name }}</td>
+              <td><img [src]="club.flag" style="height: 35px;" title="{{ club.country }}"></td>
+              <td>{{ club.founded }}</td>
+              <td>
+                <button mat-icon-button matTooltip="Upvote">
+                  <mat-icon>thumb_up</mat-icon>
+                </button>
+                <button mat-icon-button matTooltip="Downvote">
+                  <mat-icon>thumb_down</mat-icon>
+                </button>
+                <button mat-icon-button matTooltip="Agregar a favoritos">
+                  <mat-icon>favorite_border</mat-icon>
+                </button>
+                <button mat-button matTooltip="Detalles">
+                  <mat-icon>arrow_forward</mat-icon>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </mat-card-content>
   </mat-card>
 </div>

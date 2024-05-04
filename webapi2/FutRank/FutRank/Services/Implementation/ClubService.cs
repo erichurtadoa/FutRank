@@ -8,9 +8,9 @@ namespace FutRank.Services.Implementation
     public class ClubService : IClubService
     {
         private readonly IClubRepository _clubRepository;
-        private readonly ClubMappper _mapper;
+        private readonly ClubMapper _mapper;
 
-        public ClubService(IClubRepository clubRepository, ClubMappper mapper)
+        public ClubService(IClubRepository clubRepository, ClubMapper mapper)
         {
             _clubRepository = clubRepository;
             _mapper = mapper;

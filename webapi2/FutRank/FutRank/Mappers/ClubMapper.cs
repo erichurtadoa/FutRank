@@ -3,7 +3,7 @@ using FutRank.Models;
 
 namespace FutRank.Mappers
 {
-    public class ClubMappper
+    public class ClubMapper
     {
         public ClubDto MapClubtoDto(Club entity) {
             return new ClubDto

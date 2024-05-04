@@ -14,6 +14,7 @@ namespace FutRank.Models
         public virtual DbSet<Country> Countries { get; set; }
         public virtual DbSet<League> Leagues { get; set; }
         public virtual DbSet<Standing> Standings { get; set; }
+        public virtual DbSet<Fixture> Fixture { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

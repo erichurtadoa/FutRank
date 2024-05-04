@@ -11,17 +11,17 @@ namespace FutRank.Controllers
     [Route("[controller]")]
     public class FixtureController : ControllerBase
     {
-        private readonly IClubService _clubService;
+        private readonly IFixtureService _fixtureService;
 
-        public FixtureController(IClubService clubService)
+        public FixtureController(IFixtureService fixtureService)
         {
-            _clubService = clubService;
+            _fixtureService = fixtureService;
         }
 
         [HttpGet("All")]
-        public IEnumerable<ClubDto> GetFixtures()
+        public IEnumerable<FixtureDto> GetFixtures()
         {
-            return _clubService.GetClubsAsync();
+            return _fixtureService.GetFixturesAsync();
         }
 
         [HttpPost("ConvertJson")]

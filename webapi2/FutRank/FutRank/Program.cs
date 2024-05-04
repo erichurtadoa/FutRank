@@ -14,11 +14,11 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
-builder.Services.AddScoped<IVenueService, VenueService>();
-builder.Services.AddScoped<IClubService, ClubService>();
-builder.Services.AddScoped<IVenueRepository, VenueRepository>();
-builder.Services.AddScoped<IClubRepository, ClubRepository>();
-builder.Services.AddScoped<ClubMappper>();
+ConfigureServices(builder);
+ConfigureRepositories(builder);
+
+builder.Services.AddScoped<ClubMapper>();
+builder.Services.AddScoped<FixtureMapper>();
 
 builder.Services.AddCors(options =>
 {
@@ -54,3 +54,17 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+void ConfigureServices(WebApplicationBuilder builder)
+{
+    builder.Services.AddScoped<IVenueService, VenueService>();
+    builder.Services.AddScoped<IClubService, ClubService>();
+    builder.Services.AddScoped<IFixtureService, FixtureService>();
+}
+
+void ConfigureRepositories(WebApplicationBuilder builder)
+{
+    builder.Services.AddScoped<IVenueRepository, VenueRepository>();
+    builder.Services.AddScoped<IClubRepository, ClubRepository>();
+    builder.Services.AddScoped<IFixtureRepository, FixtureRepository>();
+}

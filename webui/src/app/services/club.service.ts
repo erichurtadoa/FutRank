@@ -13,6 +13,6 @@ export class ClubService {
   constructor(private http: HttpClient) { }
 
   getClubs(): Observable<Club[]> {
-    return this.http.get<Club[]>(`${this.baseUrl}/Clubs`);
+    return this.http.get<Club[]>(`${this.baseUrl}/All`);
   }
 }
