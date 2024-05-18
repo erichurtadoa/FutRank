@@ -1,87 +1,86 @@
 .container {
   display: flex;
   justify-content: center;
-  height: calc(100vh - 64px);
+  height: calc(100vh - 50px);
 }
 
-.mat-mdc-card-content {
+.mat-mdc-card {
   display: flex;
-  flex-direction: column;
-  height: 100vh;
-  background-color: #fffdfd;
-  width: 70vw;
+  width: 70vw; /* Ancho del 90% del contenedor */
   overflow: auto;
 }
 
-.mat-list-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 15px;
+.mat-mdc-card::-webkit-scrollbar {
+  width: 10px; /* Ancho de la barra de desplazamiento */
 }
 
-.list-item {
-  border-bottom: 1px solid rgb(152, 127, 187);
-  border-radius: 4px;
-  padding: 10px;
-  //background-color: azure;
+/* Estilo del pulgar de la barra de desplazamiento */
+.mat-mdc-card::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2); /* Color del pulgar */
+  border-radius: 5px; /* Radio de borde del pulgar */
 }
 
-.mdc-list-item.mdc-list-item--with-one-line {
-  height: auto;
+.table {
+  width: 100%; /* La tabla ocupa todo el espacio disponible */
+  border-collapse: collapse; /* Fusionar bordes de celda */
 }
 
-.row {
-  display: flex;
-  padding: 5px;
+th, td {
+  padding: 8px; /* Espaciado interno de las celdas */
+  width: 15%;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2; /* Color de fondo del encabezado */
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2; /* Color de fondo de las filas pares */
+}
+
+tr:hover {
+  background-color: #ddd; /* Color de fondo al pasar el cursor sobre la fila */
+}
+
+td:first-child, th:first-child {
+  width: 10%; /* Ancho de la primera columna */
+}
+
+td:last-child, th:last-child {
+  width: 15%; /* Ancho de la última columna */
 }
 
 .column {
-  flex: 1;
-  padding: 0 10px;
+  flex: 1; /* Las columnas se expanden para ocupar el espacio disponible */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .column-center {
-  flex: 1;
-  padding: 0 10px;
+  flex: 2; /* Las columnas del centro ocupan el doble de espacio que las laterales */
   display: flex;
+  justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
 
 .column-right {
-  flex: 1;
-  padding: 0 10px;
+  flex: 1; /* Las columnas de la derecha ocupan el mismo espacio que las laterales */
   display: flex;
-  align-items: flex-end;
-  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-.mat-list-item .column {
-  width: 500px;
-  flex: 1;
-  padding: 0 10px;
-}
-
-.mat-list-item .row {
+.logos-container {
   display: flex;
-  width: 100%;
+  gap: 10px; /* Espacio entre los logos, ajusta según tu preferencia */
+  justify-content: center;
 }
 
-.team {
-  font-weight: bold;
-}
-
-.votes-column {
-  flex-wrap: wrap;
-  flex-direction: column;
-}
-
-.user-note-column {
-  flex-wrap: wrap;
-  flex-direction: column;
-}
-
-.mat-mdc-card-content>:last-child:not(.mat-mdc-card-footer) {
-  padding: 46px;
+.actions-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre los botones, ajusta según tu preferencia */
+  justify-content: center;
 }

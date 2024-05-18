@@ -1,5 +1,6 @@
 ﻿using FutRank.Dtos;
 using FutRank.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace FutRank.Mappers
 {
@@ -10,19 +11,26 @@ namespace FutRank.Mappers
             {
                 Id = entity.Id,
                 Referee = entity.Referee,
-                Date = entity.Date,
+                Date = NormalizeDate(entity.Date),
                 VenueId = entity.VenueId,
                 League = entity.League.Name,
                 Season = entity.Season,
                 Round = entity.Round,
                 HomeTeamId = entity.HomeTeamId,
+                LogoHome = entity.HomeClub.Logo,
                 AwayTeamId = entity.AwayTeamId,
+                LogoAway = entity.AwayClub.Logo,
                 GoalsHome = entity.GoalsHome,
                 GoalsAway = entity.GoalsAway,
                 PenaltyHome = entity.PenaltyHome,
                 PenaltyAway = entity.PenaltyAway,
                 Rate = entity.Rate,
             };
+        }
+
+        private string NormalizeDate(string date)
+        {
+            return date.Split('T')[0];
         }
 
     }

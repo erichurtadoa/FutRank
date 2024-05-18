@@ -15,9 +15,9 @@
           </thead>
           <tbody>
             <tr *ngFor="let club of dataSource">
-              <td><img [src]="club.logo" style="height: 88px;"></td>
+              <td><img [src]="club.logo" style="height: 70px;"></td>
               <td>{{ club.name }}</td>
-              <td><img [src]="club.flag" style="height: 35px;" title="{{ club.country }}"></td>
+              <td><img [src]="club.flag" style="height: 30px;" title="{{ club.country }}"></td>
               <td>{{ club.founded }}</td>
               <td>
                 <button mat-icon-button matTooltip="Upvote">

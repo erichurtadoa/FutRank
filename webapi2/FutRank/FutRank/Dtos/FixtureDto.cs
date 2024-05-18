@@ -10,6 +10,8 @@
         public string? Season { get; set; }
         public string Round { get; set; }
         public int HomeTeamId { get; set; }
+        public string LogoHome { get; set; }
+        public string LogoAway { get; set; }
         public int AwayTeamId { get; set; }
         public int? GoalsHome { get; set; }
         public int? GoalsAway { get; set; }
