@@ -1,0 +1,73 @@
+.container {
+  display: flex;
+  justify-content: center;
+  height: calc(100vh - 50px);
+}
+
+.mat-mdc-card {
+  display: flex;
+  width: 70vw; /* Ancho del 90% del contenedor */
+  overflow: auto;
+}
+
+.mat-mdc-card::-webkit-scrollbar {
+  width: 10px; /* Ancho de la barra de desplazamiento */
+}
+
+/* Estilo del pulgar de la barra de desplazamiento */
+.mat-mdc-card::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2); /* Color del pulgar */
+  border-radius: 5px; /* Radio de borde del pulgar */
+}
+
+.table {
+  width: 100%; /* La tabla ocupa todo el espacio disponible */
+  border-collapse: collapse; /* Fusionar bordes de celda */
+}
+
+th, td {
+  padding: 8px; /* Espaciado interno de las celdas */
+  width: 25%;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2; /* Color de fondo del encabezado */
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2; /* Color de fondo de las filas pares */
+}
+
+tr:hover {
+  background-color: #ddd; /* Color de fondo al pasar el cursor sobre la fila */
+}
+
+td:first-child, th:first-child {
+  width: 10%; /* Ancho de la primera columna */
+}
+
+td:last-child, th:last-child {
+  width: 15%; /* Ancho de la última columna */
+}
+
+.column {
+  flex: 1; /* Las columnas se expanden para ocupar el espacio disponible */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column-center {
+  flex: 2; /* Las columnas del centro ocupan el doble de espacio que las laterales */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column-right {
+  flex: 1; /* Las columnas de la derecha ocupan el mismo espacio que las laterales */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

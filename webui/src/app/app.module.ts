@@ -1,7 +1,8 @@
 import { AppComponent } from './app.component';
 import { ScreenManagerComponent } from './screen-manager/screen-manager.component';
-import { PrincipalPageComponent } from './principal-page/principal-page.component';
-import { ClubRankPageComponent } from './club-rank-page/club-rank-page.component';
+import { PrincipalPageComponent } from './dashboards/principal-page/principal-page.component';
+import { ClubRankPageComponent } from './dashboards/club-rank-page/club-rank-page.component';
+import { ClubDetailComponent } from './dashboards/club-detail/club-detail.component';
 
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -23,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     ScreenManagerComponent,
     PrincipalPageComponent,
-    ClubRankPageComponent
+    ClubRankPageComponent,
+    ClubDetailComponent
   ],
   imports: [
     CommonModule,
