@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\FutRank.csproj": {}
+    "C:\\Users\\Eric_\\OneDrive\\Desktop\\FutRank\\webapi2\\FutRank\\FutRank\\FutRank.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\FutRank.csproj": {
+    "C:\\Users\\Eric_\\OneDrive\\Desktop\\FutRank\\webapi2\\FutRank\\FutRank\\FutRank.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\FutRank.csproj",
+        "projectUniqueName": "C:\\Users\\Eric_\\OneDrive\\Desktop\\FutRank\\webapi2\\FutRank\\FutRank\\FutRank.csproj",
         "projectName": "FutRank",
-        "projectPath": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\FutRank.csproj",
+        "projectPath": "C:\\Users\\Eric_\\OneDrive\\Desktop\\FutRank\\webapi2\\FutRank\\FutRank\\FutRank.csproj",
         "packagesPath": "C:\\Users\\Eric_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Eric_\\OneDrive\\Desktop\\IFDb\\IFDb\\webapi2\\FutRank\\FutRank\\obj\\",
+        "outputPath": "C:\\Users\\Eric_\\OneDrive\\Desktop\\FutRank\\webapi2\\FutRank\\FutRank\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Eric_\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -91,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

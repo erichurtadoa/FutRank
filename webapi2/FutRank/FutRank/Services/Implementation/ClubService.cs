@@ -20,6 +20,12 @@ namespace FutRank.Services.Implementation
         {
             var clubs = _clubRepository.GetClubsAsync();
             return clubs.Select(c => _mapper.MapClubtoDto(c));
+        }
+
+        public ClubDetailsDto GetClubByIdAsync(int id)
+        {
+            var club = _clubRepository.GetClubById(id);
+            return _mapper.MapClubtoDetailsDto(club);
 
         }
     }
