@@ -4,7 +4,11 @@ using FutRank.Repositories.Implementation;
 using FutRank.Repositories.Interfaces;
 using FutRank.Services.Implementation;
 using FutRank.Services.Interfaces;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,6 +38,34 @@ builder.Services.AddCors(options =>
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<SampleDBContext>(options => options.UseSqlServer(connectionString));
 
+// Configurar Identity
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<SampleDBContext>()
+    .AddDefaultTokenProviders();
+
+// Configurar la autenticación con JWT
+var jwtSettings = builder.Configuration.GetSection("JwtSettings");
+var key = Encoding.ASCII.GetBytes(jwtSettings["Secret"]);
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = jwtSettings["Issuer"],
+        ValidAudience = jwtSettings["Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(key)
+    };
+});
+
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
@@ -60,6 +92,7 @@ void ConfigureServices(WebApplicationBuilder builder)
     builder.Services.AddScoped<IVenueService, VenueService>();
     builder.Services.AddScoped<IClubService, ClubService>();
     builder.Services.AddScoped<IFixtureService, FixtureService>();
+    builder.Services.AddScoped<ISessionService, SessionService>();
 }
 
 void ConfigureRepositories(WebApplicationBuilder builder)
@@ -67,4 +100,5 @@ void ConfigureRepositories(WebApplicationBuilder builder)
     builder.Services.AddScoped<IVenueRepository, VenueRepository>();
     builder.Services.AddScoped<IClubRepository, ClubRepository>();
     builder.Services.AddScoped<IFixtureRepository, FixtureRepository>();
+    builder.Services.AddScoped<ISessionRepository, SessionRepository>();
 }

@@ -276,3 +276,10 @@ C:\Users\Eric_\OneDrive\Desktop\FutRank\webapi2\FutRank\FutRank\obj\Debug\net8.0
 C:\Users\Eric_\OneDrive\Desktop\FutRank\webapi2\FutRank\FutRank\obj\Debug\net8.0\FutRank.pdb
 C:\Users\Eric_\OneDrive\Desktop\FutRank\webapi2\FutRank\FutRank\obj\Debug\net8.0\FutRank.genruntimeconfig.cache
 C:\Users\Eric_\OneDrive\Desktop\FutRank\webapi2\FutRank\FutRank\obj\Debug\net8.0\ref\FutRank.dll
+C:\Users\Eric_\OneDrive\Desktop\FutRank\webapi2\FutRank\FutRank\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Eric_\OneDrive\Desktop\FutRank\webapi2\FutRank\FutRank\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Eric_\OneDrive\Desktop\FutRank\webapi2\FutRank\FutRank\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Eric_\OneDrive\Desktop\FutRank\webapi2\FutRank\FutRank\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Eric_\OneDrive\Desktop\FutRank\webapi2\FutRank\FutRank\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Eric_\OneDrive\Desktop\FutRank\webapi2\FutRank\FutRank\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Eric_\OneDrive\Desktop\FutRank\webapi2\FutRank\FutRank\bin\Debug\net8.0\Microsoft.Extensions.Options.dll

@@ -1,8 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace FutRank.Models
 {
-    public partial class SampleDBContext : DbContext
+    public partial class SampleDBContext : IdentityDbContext<IdentityUser>
     {
         public SampleDBContext(DbContextOptions
         <SampleDBContext> options)
@@ -18,13 +20,14 @@ namespace FutRank.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<Venue>(entity => {
                 entity.HasKey(k => k.Id);
                 entity.HasOne(v => v.Country)
                 .WithMany()
                 .HasForeignKey(v => v.CountryName);
             });
-            OnModelCreatingPartial(modelBuilder);
 
             modelBuilder.Entity<Club>(entity => {
                 entity.HasKey(k => k.Id);
@@ -35,12 +38,10 @@ namespace FutRank.Models
                 .WithMany()
                 .HasForeignKey(c => c.CountryName);
             });
-            OnModelCreatingPartial(modelBuilder);
 
             modelBuilder.Entity<Country>(entity => {
                 entity.HasKey(k => k.Name);
             });
-            OnModelCreatingPartial(modelBuilder);
 
             modelBuilder.Entity<League>(entity => {
                 entity.HasKey(k => new { k.Id, k.SeasonYear });
@@ -48,7 +49,6 @@ namespace FutRank.Models
                 .WithMany()
                 .HasForeignKey(v => v.CountryName);
             });
-            OnModelCreatingPartial(modelBuilder);
 
             modelBuilder.Entity<Standing>(entity => {
                 entity.HasKey(k => new { k.LeagueId, k.Season, k.ClubId });
@@ -59,7 +59,6 @@ namespace FutRank.Models
                 .WithMany(c => c.Standings)
                 .HasForeignKey(v => v.ClubId);
             });
-            OnModelCreatingPartial(modelBuilder);
 
             modelBuilder.Entity<Fixture>(entity => {
                 entity.HasKey(k => k.Id);
@@ -76,8 +75,8 @@ namespace FutRank.Models
                 .WithMany()
                 .HasForeignKey(v => v.VenueId);
             });
-            OnModelCreatingPartial(modelBuilder);
+
+            base.OnModelCreating(modelBuilder);
         }
-        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }
