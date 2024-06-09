@@ -1,0 +1,42 @@
+<h2>Matches</h2>
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Match</th>
+        <th>Competition</th>
+        <th>Date</th>
+        <th>Note</th>
+        <th>Your note</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let fixture of dataSource">
+        <td>
+          <div class="logos-container">
+            <img [src]="fixture.logoHome" style="height: 60px;">
+            <img [src]="fixture.logoAway" style="height: 60px;">
+          </div>
+        </td>
+        <td>
+          {{ fixture.league }}
+          {{ fixture.season }}
+        </td>
+        <td>{{ fixture.date }}</td>
+        <td>{{ fixture.goalsHome }}</td>
+        <td>{{ fixture.goalsAway }}</td>
+        <td>
+          <div class="actions-container">
+            <button mat-icon-button matTooltip="Agregar a favoritos">
+              <mat-icon>favorite_border</mat-icon>
+            </button>
+            <button mat-button matTooltip="Detalles">
+              <mat-icon>arrow_forward</mat-icon>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

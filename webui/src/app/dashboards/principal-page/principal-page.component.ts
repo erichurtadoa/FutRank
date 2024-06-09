@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Fixture } from '../models/fixture';
-import { FixtureService } from '../services/fixture.service';
+import { Fixture } from '../../models/fixture';
+import { FixtureService } from '../../services/fixture.service';
 
 @Component({
   selector: 'app-principal-page',

@@ -1,0 +1,38 @@
+<div class="club-details">
+  <div class="club-logo-popularity">
+    <img [src]="club.logo" alt="{{club.name}} logo">
+    <div class="popularity">
+      <mat-icon [ngStyle]="{color: '#fbc02d', 'font-size.px': 30}">star</mat-icon>
+      <p>{{club.founded}}</p>
+    </div>
+  </div>
+  <div class="club-info">
+    <h2>{{club.name}}</h2>
+    <p>Founded: {{club.founded}}</p>
+    <p>Country: {{club.country}}</p>
+  </div>
+  <div class="club-actions">
+    <button mat-icon-button matTooltip="Upvote">
+      <mat-icon>thumb_up</mat-icon>
+    </button>
+    <button mat-icon-button matTooltip="Downvote">
+      <mat-icon>thumb_down</mat-icon>
+    </button>
+    <button mat-icon-button matTooltip="Agregar a favoritos">
+      <mat-icon>favorite_border</mat-icon>
+    </button>
+  </div>
+  <div class="venue-details">
+    <div>
+      <h3>Venue Details</h3>
+      <p>Name: {{club.venueName}}</p>
+      <p>Direction: {{club.venueAddress}}</p>
+      <p>Capacity: {{club.venueCapacity}}</p>
+      <p>Surface: {{club.venueSurface}}</p>
+      <p>City: {{club.venueCity}}</p>
+    </div>
+    <div class="venue-image">
+      <img [src]="club.venueImage" alt="{{club.venueName}} image">
+    </div>
+  </div>
+</div>

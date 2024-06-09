@@ -16,11 +16,32 @@ namespace FutRank.Mappers
                 Logo = entity.Logo,
                 Popularity = entity.Popularity,
                 Country = entity.CountryName,
-                flag = entity.Country.Image,
+                Flag = entity.Country.Image,
                 Venue = entity.VenueId,
                 City = entity.Venue.City
             };
         }
 
+        public ClubDetailsDto MapClubtoDetailsDto(Club entity)
+        {
+            return new ClubDetailsDto
+            {
+                Id = entity.Id,
+                Name = entity.Name,
+                Code = entity.Code,
+                Founded = entity.Founded,
+                National = entity.National,
+                Logo = entity.Logo,
+                Popularity = entity.Popularity,
+                Country = entity.CountryName,
+                flag = entity.Country.Image,
+                VenueName = entity.Venue.Name,
+                VenueAddress = entity.Venue.Address,
+                VenueCapacity = entity.Venue.Capacity,
+                VenueSurface = entity.Venue.Surface,
+                VenueImage = entity.Venue.Image,
+                VenueCity = entity.Venue.City
+            };
+        }
     }
 }

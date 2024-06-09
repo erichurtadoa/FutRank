@@ -1,9 +1,6 @@
 ﻿using FutRank.Dtos;
-using FutRank.Models;
-using FutRank.Services.Implementation;
 using FutRank.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json.Linq;
 
 namespace FutRank.Controllers
 {
@@ -22,6 +19,12 @@ namespace FutRank.Controllers
         public IEnumerable<ClubDto> GetClubs()
         {
             return _clubService.GetClubsAsync();
+        }
+
+        [HttpGet("{id}")]
+        public ClubDetailsDto GetClubById(int id)
+        {
+            return _clubService.GetClubByIdAsync(id);
         }
     }
 }

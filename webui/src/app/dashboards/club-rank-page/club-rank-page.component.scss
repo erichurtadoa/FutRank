@@ -1,25 +1,3 @@
-.container {
-  display: flex;
-  justify-content: center;
-  height: calc(100vh - 50px);
-}
-
-.mat-mdc-card {
-  display: flex;
-  width: 70vw; /* Ancho del 90% del contenedor */
-  overflow: auto;
-}
-
-.mat-mdc-card::-webkit-scrollbar {
-  width: 10px; /* Ancho de la barra de desplazamiento */
-}
-
-/* Estilo del pulgar de la barra de desplazamiento */
-.mat-mdc-card::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.2); /* Color del pulgar */
-  border-radius: 5px; /* Radio de borde del pulgar */
-}
-
 .table {
   width: 100%; /* La tabla ocupa todo el espacio disponible */
   border-collapse: collapse; /* Fusionar bordes de celda */
@@ -27,7 +5,7 @@
 
 th, td {
   padding: 8px; /* Espaciado interno de las celdas */
-  width: 15%;
+  width: 25%;
   text-align: center;
 }
 
@@ -70,17 +48,4 @@ td:last-child, th:last-child {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-}
-
-.logos-container {
-  display: flex;
-  gap: 10px; /* Espacio entre los logos, ajusta según tu preferencia */
-  justify-content: center;
-}
-
-.actions-container {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* Espacio entre los botones, ajusta según tu preferencia */
-  justify-content: center;
 }
