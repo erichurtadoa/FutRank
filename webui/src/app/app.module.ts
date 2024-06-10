@@ -17,7 +17,14 @@ import { MatListModule } from '@angular/material/list';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { routes } from './app.routes';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { AuthInterceptor } from './helpers/auth.interceptor';
+import { SessionService } from './services/session.service';
+import { LoginDialogComponent } from './session/login-dialog/login-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { RegisterDialogComponent } from './session/register-dialog/register-dialog.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +32,9 @@ import { HttpClientModule } from '@angular/common/http';
     ScreenManagerComponent,
     PrincipalPageComponent,
     ClubRankPageComponent,
-    ClubDetailComponent
+    ClubDetailComponent,
+    LoginDialogComponent,
+    RegisterDialogComponent
   ],
   imports: [
     CommonModule,
@@ -39,9 +48,15 @@ import { HttpClientModule } from '@angular/common/http';
     MatListModule,
     BrowserModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatInputModule,
+    FormsModule,
+    MatDialogModule
   ],
-  providers: [],
+  providers: [
+    SessionService,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

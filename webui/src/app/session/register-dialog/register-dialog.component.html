@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>Sign Up</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Username</mat-label>
+    <input matInput [(ngModel)]="userRegister.username" required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="userRegister.email" required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Password</mat-label>
+    <input matInput type="password" [(ngModel)]="userRegister.password" required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Confirm Password</mat-label>
+    <input matInput type="password" [(ngModel)]="userRegister.confirmPassword" required>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button (click)="onSignUp()">Login</button>
+</div>
+
+
