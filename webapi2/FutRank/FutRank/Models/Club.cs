@@ -26,5 +26,7 @@ namespace FutRank.Models
 
         public virtual ICollection<Fixture> HomeFixtures { get; set; }
         public virtual ICollection<Fixture> AwayFixtures { get; set; }
+
+        public virtual ICollection<UserClubs> UserClubs {  get; set; }
     }
 }

@@ -65,7 +65,7 @@ namespace FutRank.Controllers
                 {
                     var user = await _userManager.FindByNameAsync(model.Username);
                     var token = GenerateJwtToken(user);
-                    return Ok(new { Token = token });
+                    return Ok(new { Id = user.Id, Username = user.UserName, Email = user.Email, Token = token });
                 }
 
                 return Unauthorized();
