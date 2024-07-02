@@ -17,7 +17,7 @@
         <td><img [src]="club.flag" style="height: 30px;" title="{{ club.country }}"></td>
         <td>{{ club.founded }}</td>
         <td>
-          <button mat-icon-button matTooltip="Upvote">
+          <button mat-icon-button matTooltip="Upvote" (click)="upVote()">
             <mat-icon>thumb_up</mat-icon>
           </button>
           <button mat-icon-button matTooltip="Downvote">

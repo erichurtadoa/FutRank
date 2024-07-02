@@ -20,4 +20,8 @@ export class ClubService {
   getClubById(id: number): Observable<ClubDetails> {
     return this.http.get<ClubDetails>(`${this.baseUrl}/${id}`);
   }
+
+  upVote(upVote: boolean): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/Vote`, upVote);
+  }
 }

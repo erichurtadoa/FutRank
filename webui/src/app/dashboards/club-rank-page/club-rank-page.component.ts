@@ -37,4 +37,12 @@ export class ClubRankPageComponent implements OnInit {
     console.log(id);
     this.router.navigate(['/clubes', id]);
   }
+
+  public upVote() {
+    this.clubService.upVote(true).subscribe(
+      response => {
+        console.log("Vote succesful");
+      }
+    )
+  }
 }

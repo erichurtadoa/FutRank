@@ -1,5 +1,6 @@
 ﻿using FutRank.Dtos;
 using FutRank.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FutRank.Controllers
@@ -25,6 +26,13 @@ namespace FutRank.Controllers
         public ClubDetailsDto GetClubById(int id)
         {
             return _clubService.GetClubByIdAsync(id);
+        }
+
+        [HttpPost("Vote")]
+        [Authorize]
+        public IActionResult VoteClub([FromBody] bool upVote)
+        {
+            return Ok();
         }
     }
 }
