@@ -6,5 +6,7 @@ namespace FutRank.Repositories.Interfaces
     {
         IEnumerable<Club> GetClubsAsync();
         Club GetClubById(int Id);
+        Task VoteClubAsync(UserClubs userClub);
+        Task UpdateClubPopularityAsync(int clubId);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using FutRank.Dtos;
 using FutRank.Mappers;
+using FutRank.Models;
 using FutRank.Repositories.Interfaces;
 using FutRank.Services.Interfaces;
 
@@ -26,7 +27,20 @@ namespace FutRank.Services.Implementation
         {
             var club = _clubRepository.GetClubById(id);
             return _mapper.MapClubtoDetailsDto(club);
+        }
 
+        public async Task VoteClub(bool upVote, Guid userId, int clubId)
+        {
+            var userClub = new UserClubs
+            {
+                UserId = userId,
+                ClubId = clubId,
+                UpVote = upVote,
+            };
+
+            await _clubRepository.VoteClubAsync(userClub);
+
+            await _clubRepository.UpdateClubPopularityAsync(clubId);
         }
     }
 }

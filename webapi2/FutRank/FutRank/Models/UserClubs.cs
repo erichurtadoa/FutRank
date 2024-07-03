@@ -15,5 +15,8 @@ namespace FutRank.Models
 
         [ForeignKey("ClubId")]
         public virtual Club Club { get; set; }
+
+        [ForeignKey("UserId")]
+        public virtual UserInfo User { get; set; }
     }
 }

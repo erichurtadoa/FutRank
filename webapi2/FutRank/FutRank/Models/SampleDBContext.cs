@@ -18,6 +18,7 @@ namespace FutRank.Models
         public virtual DbSet<Standing> Standings { get; set; }
         public virtual DbSet<Fixture> Fixture { get; set; }
         public virtual DbSet<UserClubs> UserClubs { get; set; }
+        public virtual DbSet<UserInfo> UsersInfo { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -82,6 +83,13 @@ namespace FutRank.Models
                 entity.HasOne(v => v.Club)
                 .WithMany(c => c.UserClubs)
                 .HasForeignKey(v => v.ClubId);
+                entity.HasOne(v => v.User)
+                .WithMany(c => c.UserClubs)
+                .HasForeignKey(v => v.UserId);
+            });
+
+            modelBuilder.Entity<UserInfo>(entity => {
+                entity.HasKey(k => k.Id);
             });
 
             base.OnModelCreating(modelBuilder);

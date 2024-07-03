@@ -20,12 +20,14 @@ namespace FutRank.Controllers
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly IConfiguration _configuration;
+        private readonly SampleDBContext _context;
 
-        public SessionController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IConfiguration configuration)
+        public SessionController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IConfiguration configuration, SampleDBContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _configuration = configuration;
+            _context = context;
         }
 
         [HttpPost("Register")]
@@ -45,6 +47,15 @@ namespace FutRank.Controllers
 
                 if (result.Succeeded)
                 {
+                    var userInfo = new UserInfo
+                    {
+                        Id = new Guid(user.Id),
+                        Username = user.UserName,
+                        Email = user.Email,
+                    };
+                    _context.UsersInfo.Add(userInfo);
+                    _context.SaveChanges();
+
                     return Ok(new { Result = "User created successfully" });
                 }
 

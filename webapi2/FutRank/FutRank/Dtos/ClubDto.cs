@@ -1,4 +1,6 @@
-﻿namespace FutRank.Dtos
+﻿using FutRank.Models;
+
+namespace FutRank.Dtos
 {
     public class ClubDto
     {
