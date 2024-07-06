@@ -1,4 +1,5 @@
 ﻿using FutRank.Dtos;
+using FutRank.Models;
 using FutRank.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -24,35 +25,13 @@ namespace FutRank.Controllers
         [HttpGet("All")]
         public IEnumerable<ClubDto> GetClubs()
         {
+            if (User.FindFirstValue(ClaimTypes.Sid) != null)
+            {
+                var userGuid = new Guid(User.FindFirstValue(ClaimTypes.Sid));
+                return _clubService.GetClubsUserAsync(userGuid);
+            }
             return _clubService.GetClubsAsync();
         }
-
-        /*[HttpGet("AllWithVoteStatus")]
-        [Authorize]
-        public async Task<IActionResult> GetClubsWithVoteStatus()
-        {
-            var userId = User.FindFirstValue(ClaimTypes.Sid);
-            var userGuid = new Guid(userId);
-
-            var clubs = await _context.Clubs
-                .Select(c => new ClubWithVoteStatusDto
-                {
-                    Id = c.Id,
-                    Name = c.Name,
-                    Code = c.Code,
-                    Founded = c.Founded,
-                    National = c.National,
-                    Logo = c.Logo,
-                    Popularity = c.Popularity,
-                    UpVote = _context.UserClubs
-                        .Where(uc => uc.ClubId == c.Id && uc.UserId == userGuid)
-                        .Select(uc => uc.UpVote)
-                        .FirstOrDefault()
-                })
-                .ToListAsync();
-
-            return Ok(clubs);
-        }*/
 
         [HttpGet("{id}")]
         public ClubDetailsDto GetClubById(int id)
@@ -70,6 +49,20 @@ namespace FutRank.Controllers
             var userGuid = new Guid(userId);
 
             await _clubService.VoteClub(upVote, userGuid, clubId);
+
+            return Ok();
+        }
+
+        [HttpPost("AddFavourite")]
+        [Authorize]
+        public async Task<IActionResult> AddFavourite(int clubId)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.Sid);
+            var user = _userManager.FindByIdAsync(userId);
+
+            var userGuid = new Guid(userId);
+
+            await _clubService.AddFavourite(userGuid, clubId);
 
             return Ok();
         }

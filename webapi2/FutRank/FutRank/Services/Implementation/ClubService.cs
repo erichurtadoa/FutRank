@@ -23,6 +23,12 @@ namespace FutRank.Services.Implementation
             return clubs.Select(c => _mapper.MapClubtoDto(c));
         }
 
+        public IEnumerable<ClubDto> GetClubsUserAsync(Guid userId)
+        {
+            var clubs = _clubRepository.GetClubsAsync();
+            return clubs.Select(c => _mapper.MapClubtoDtoUser(c, userId));
+        }
+
         public ClubDetailsDto GetClubByIdAsync(int id)
         {
             var club = _clubRepository.GetClubById(id);
@@ -41,6 +47,17 @@ namespace FutRank.Services.Implementation
             await _clubRepository.VoteClubAsync(userClub);
 
             await _clubRepository.UpdateClubPopularityAsync(clubId);
+        }
+
+        public async Task AddFavourite(Guid userId, int clubId)
+        {
+            var userClub = new UserClubs
+            {
+                UserId = userId,
+                ClubId = clubId
+            };
+
+            await _clubRepository.AddFavourite(userClub);
         }
     }
 }

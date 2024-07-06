@@ -15,16 +15,16 @@
         <td><img [src]="club.logo" style="height: 70px;"></td>
         <td>{{ club.name }}</td>
         <td><img [src]="club.flag" style="height: 30px;" title="{{ club.country }}"></td>
-        <td>{{ club.founded }}</td>
+        <td>{{ club.popularity }}</td>
         <td>
-          <button mat-icon-button matTooltip="Upvote" (click)="upVote()">
+          <button mat-icon-button matTooltip="Upvote" (click)="upVote(true, club.id)" [ngStyle]="{'color': club.upvote ? 'blue' : 'inherit'}">
             <mat-icon>thumb_up</mat-icon>
           </button>
-          <button mat-icon-button matTooltip="Downvote">
+          <button mat-icon-button matTooltip="Downvote" (click)="upVote(false, club.id)" [ngStyle]="{'color': club.upvote === false ? 'red' : 'inherit'}">
             <mat-icon>thumb_down</mat-icon>
           </button>
-          <button mat-icon-button matTooltip="Agregar a favoritos">
-            <mat-icon>favorite_border</mat-icon>
+          <button mat-icon-button matTooltip="Agregar a favoritos" (click)="addFavourite(club.id)" [color]="'warn'">
+            <mat-icon>{{ club.favourite ? 'favorite' : 'favorite_border' }}</mat-icon>
           </button>
           <button mat-button matTooltip="Detalles" (click)="navigateToDetails(club.id)">
             <mat-icon>arrow_forward</mat-icon>

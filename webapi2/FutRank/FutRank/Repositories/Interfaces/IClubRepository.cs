@@ -8,5 +8,6 @@ namespace FutRank.Repositories.Interfaces
         Club GetClubById(int Id);
         Task VoteClubAsync(UserClubs userClub);
         Task UpdateClubPopularityAsync(int clubId);
+        Task AddFavourite(UserClubs userClubs);
     }
 }

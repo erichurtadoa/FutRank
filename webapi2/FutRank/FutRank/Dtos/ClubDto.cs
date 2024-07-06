@@ -15,5 +15,7 @@ namespace FutRank.Dtos
         public string? Flag { get; set; }
         public int Venue { get; set; }
         public string? City { get; set; }
+        public bool? Favourite {  get; set; }
+        public bool? Upvote { get; set; }
     }
 }

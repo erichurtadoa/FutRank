@@ -19,8 +19,9 @@ namespace FutRank.Repositories.Implementation
         {
             var clubs =  _context.Clubs.Include(club => club.Venue)
                 .Include(club => club.Country)
+                .Include(club => club.UserClubs)
                 .ToList();
-            return clubs;
+            return clubs.OrderByDescending(club => club.Popularity);
         }
 
         public Club GetClubById(int id)
@@ -38,12 +39,16 @@ namespace FutRank.Repositories.Implementation
             
             if (existedUser != null)
             {
-                existedUser.UpVote = userClubs.UpVote;
+                if (existedUser.UpVote == userClubs.UpVote)
+                    existedUser.UpVote = null;
+
+                else 
+                    existedUser.UpVote = userClubs.UpVote;
             }
 
             else
             {
-                _context.Add(userClubs);
+                _context.UserClubs.Add(userClubs);
             }
 
             _context.SaveChanges();
@@ -67,6 +72,29 @@ namespace FutRank.Repositories.Implementation
                 club.Popularity = popularity;
                 await _context.SaveChangesAsync();
             }
+        }
+
+        public async Task AddFavourite(UserClubs userClubs)
+        {
+            if (await _context.UserClubs.Where(x => x.UserId == userClubs.UserId && x.Favourite && x.ClubId != userClubs.ClubId).FirstOrDefaultAsync() != null)
+            {
+                return;
+            }
+
+            var existedUser = await _context.UserClubs.Where(x => x.UserId == userClubs.UserId && x.ClubId == userClubs.ClubId).FirstOrDefaultAsync();
+
+            if (existedUser != null)
+            {
+                existedUser.Favourite = !existedUser.Favourite;
+            }
+
+            else
+            {
+                userClubs.Favourite = true;
+                _context.UserClubs.Add(userClubs);
+            }
+
+            _context.SaveChanges();
         }
     }
 }

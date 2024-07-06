@@ -10,4 +10,6 @@ export interface Club {
   flag: string;
   venue: number;
   city: string;
+  favourite?: boolean;
+  upvote?: boolean;
 }

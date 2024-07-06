@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Club } from '../../models/club';
 import { ClubService } from '../../services/club.service';
 import { Router } from '@angular/router';
+import { SessionService } from '../../services/session.service';
 
 @Component({
   selector: 'app-club-rank-page',
@@ -14,7 +15,8 @@ export class ClubRankPageComponent implements OnInit {
 
   constructor(
     private clubService: ClubService,
-    private router: Router
+    private router: Router,
+    private sessionService: SessionService
   ) { }
 
   ngOnInit(): void {
@@ -22,15 +24,15 @@ export class ClubRankPageComponent implements OnInit {
   }
 
   getClubs(): void {
-    this.clubService.getClubs()
-      .subscribe(
-        (data: Club[]) => {
-        this.dataSource = data;
-      },
-      error => {
-        console.log(error);
-        console.error('Error al obtener los clubs:', error);
-      });
+    this.clubService.clubs$.subscribe(clubs => {
+      this.dataSource = clubs;
+    });
+
+    this.sessionService.isLoggedIn.subscribe(loggedIn => {
+        this.clubService.getClubs();
+    });
+
+    this.clubService.getClubs();
   }
 
   public navigateToDetails(id: number) {
@@ -38,10 +40,18 @@ export class ClubRankPageComponent implements OnInit {
     this.router.navigate(['/clubes', id]);
   }
 
-  public upVote() {
-    this.clubService.upVote(true).subscribe(
+  public upVote(vote: boolean, clubId: number) {
+    this.clubService.upVote(vote, clubId).subscribe(
       response => {
-        console.log("Vote succesful");
+        this.clubService.getClubs();
+      }
+    )
+  }
+
+  public addFavourite(clubId: number) {
+    this.clubService.addFavourite(clubId).subscribe(
+      response => {
+        this.clubService.getClubs();
       }
     )
   }
