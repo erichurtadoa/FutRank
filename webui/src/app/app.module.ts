@@ -24,7 +24,7 @@ import { AuthInterceptor } from './helpers/auth.interceptor';
 import { SessionService } from './services/session.service';
 import { LoginDialogComponent } from './session/login-dialog/login-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -57,7 +57,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     FormsModule,
     MatDialogModule,
     MatSliderModule,
-    MatTooltipModule
+    MatTooltipModule,
+    ReactiveFormsModule
   ],
   providers: [
     SessionService,

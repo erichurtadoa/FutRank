@@ -15,7 +15,7 @@ namespace FutRank.Repositories.Implementation
             _context = context;
         }
 
-        public IEnumerable<Fixture> GetFixturesAsync()
+        public async Task<IEnumerable<Fixture>> GetFixturesAsync()
         {
             var fixture =  _context.Fixture.Include(fixture => fixture.Venue)
                 .Include(fixture => fixture.League)
@@ -52,18 +52,22 @@ namespace FutRank.Repositories.Implementation
 
             var totalNotes = notes.Count();
 
-            var auxNote = 0;
-
-            notes.Select(n => auxNote = (int)(auxNote + n));
-
-            var fixtureNote = (float)(auxNote / totalNotes);
-
             var fixture = await _context.Fixture.FirstOrDefaultAsync(c => c.Id == fixtureId);
-            if (fixture != null)
+
+            if (totalNotes == 0)
             {
-                fixture.Rate = fixtureNote;
-                await _context.SaveChangesAsync();
+                fixture.Rate = null;
             }
+
+            else
+            {
+                var auxNote = notes.Aggregate(0, (sum, n) => (int)(sum + n));
+
+                var fixtureNote = (float)(auxNote / totalNotes);
+
+                fixture.Rate = fixtureNote;
+            }
+            await _context.SaveChangesAsync();
         }
     }
 }

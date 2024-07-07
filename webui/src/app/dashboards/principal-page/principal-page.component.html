@@ -28,8 +28,8 @@
         <td>{{ fixture.userNote }}</td>
         <td>
           <div class="actions-container">
-            <button mat-icon-button matTooltip="Vote" (click)="openVoteDialog(fixture.id)">
-              <mat-icon>star_outline</mat-icon>
+            <button mat-icon-button matTooltip="Vote" (click)="openVoteDialog(fixture)" style="color: darkgoldenrod;">
+              <mat-icon>{{ fixture.userNote ? 'star' : 'star_outline' }}</mat-icon>
             </button>
             <button mat-button matTooltip="Detalles">
               <mat-icon>arrow_forward</mat-icon>

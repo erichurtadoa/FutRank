@@ -1,5 +1,4 @@
 import { Component, Inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -9,7 +8,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 })
 
 export class VoteDialogComponent {
-  vote: number = 0;
+  vote: number = this.data.match.userNote ? this.data.match.userNote: 0;
 
   constructor(
     public dialogRef: MatDialogRef<VoteDialogComponent>,
@@ -22,5 +21,9 @@ export class VoteDialogComponent {
 
   onVoteClick(): void {
     this.dialogRef.close(this.vote);
+  }
+
+  onClearClick(): void {
+    this.dialogRef.close(-1);
   }
 }

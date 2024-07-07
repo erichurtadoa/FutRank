@@ -1,0 +1,22 @@
+.mdc-dialog__content>:first-child {
+  margin-left: 45px;
+  margin-right: 45px;
+}
+
+.mat-mdc-dialog-content {
+  display: contents !important;
+}
+
+.mdc-dialog__content>:last-child {
+  display: flex;
+  justify-content: space-around;
+}
+
+.submit-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.spacer {
+  flex: 1;
+}

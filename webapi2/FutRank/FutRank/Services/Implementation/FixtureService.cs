@@ -18,15 +18,15 @@ namespace FutRank.Services.Implementation
             _mapper = mapper;
         }
 
-        public IEnumerable<FixtureDto> GetFixturesAsync()
+        public async Task<IEnumerable<FixtureDto>> GetFixturesAsync()
         {
-            var fixtures = _fixtureRepository.GetFixturesAsync();
+            var fixtures = await _fixtureRepository.GetFixturesAsync();
             return fixtures.Select(c => _mapper.MapFixturetoDto(c));
         }
 
-        public IEnumerable<FixtureDto> GetFixturesUserAsync(Guid userId)
+        public async Task<IEnumerable<FixtureDto>> GetFixturesUserAsync(Guid userId)
         {
-            var fixtures = _fixtureRepository.GetFixturesAsync();
+            var fixtures = await _fixtureRepository.GetFixturesAsync();
             return fixtures.Select(c => _mapper.MapFixturetoDtoUser(c, userId));
         }
 
@@ -36,7 +36,7 @@ namespace FutRank.Services.Implementation
             {
                 UserId = userId,
                 FixtureId = fixtureId,
-                UserNote = vote,
+                UserNote = vote == -1 ? null : vote,
             };
             await _fixtureRepository.VoteFixtureAsync(userFixture);
 

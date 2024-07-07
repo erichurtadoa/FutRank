@@ -1,9 +1,21 @@
-<h1 mat-dialog-title>Vota el partido</h1>
+<h1 mat-dialog-title>Rate the match</h1>
 <div mat-dialog-content>
-  <mat-slider min="0" max="10" step="1" [(ngModel)]="vote" tickInterval="1" name="fieldName" ngDefaultControl></mat-slider>
+  <mat-slider
+        [disabled]="false"
+        [max]="10"
+        [min]="0"
+        [step]="1"
+        [discrete]="false"
+        [showTickMarks]="false">
+      <input matSliderThumb [(ngModel)]="vote" #slider>
+    </mat-slider>
   <p>Your vote: {{ vote }}</p>
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Cancel</button>
-  <button mat-button (click)="onVoteClick()">Vote</button>
+  <span class="spacer"></span>
+  <div class="submit-buttons">
+    <button mat-button (click)="onVoteClick()">Vote</button>
+    <button mat-button (click)="onClearClick()">Clear</button>
+  </div>
 </div>

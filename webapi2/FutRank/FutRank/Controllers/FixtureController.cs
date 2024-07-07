@@ -24,14 +24,14 @@ namespace FutRank.Controllers
         }
 
         [HttpGet("All")]
-        public IEnumerable<FixtureDto> GetFixtures()
+        public async Task<IEnumerable<FixtureDto>> GetFixtures()
         {
             if (User.FindFirstValue(ClaimTypes.Sid) != null)
             {
                 var userGuid = new Guid(User.FindFirstValue(ClaimTypes.Sid));
-                return _fixtureService.GetFixturesUserAsync(userGuid);
+                return await _fixtureService.GetFixturesUserAsync(userGuid);
             }
-            return _fixtureService.GetFixturesAsync();
+            return await _fixtureService.GetFixturesAsync();
         }
 
         [HttpPost("Vote")]

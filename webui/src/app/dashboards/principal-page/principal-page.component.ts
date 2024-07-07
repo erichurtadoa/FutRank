@@ -3,6 +3,7 @@ import { Fixture } from '../../models/fixture';
 import { FixtureService } from '../../services/fixture.service';
 import { MatDialog } from '@angular/material/dialog';
 import { VoteDialogComponent } from '../../dialogs/vote-dialog/vote-dialog.component';
+import { SessionService } from '../../services/session.service';
 
 
 @Component({
@@ -14,27 +15,29 @@ import { VoteDialogComponent } from '../../dialogs/vote-dialog/vote-dialog.compo
 export class PrincipalPageComponent {
   dataSource: Fixture[] = [];
 
-  constructor(private fixtureService: FixtureService, public dialog: MatDialog) { }
+  constructor(private fixtureService: FixtureService,
+    public dialog: MatDialog,
+    private sessionService: SessionService) { }
 
   ngOnInit(): void {
     this.getFixtures();
   }
 
   getFixtures(): void {
-    this.fixtureService.getFixtures()
-      .subscribe(
-        (data: Fixture[]) => {
-        this.dataSource = data;
-      },
-      error => {
-        console.log(error);
-        console.error('Error al obtener los partidos:', error);
-      });
+    this.fixtureService.fixtures$.subscribe(fixtures => {
+      this.dataSource = fixtures;
+    });
+
+    this.sessionService.isLoggedIn.subscribe(loggedIn => {
+      this.fixtureService.getFixtures();
+    });
+
+    //this.fixtureService.getFixtures();
   }
 
   openVoteDialog(fixture: any): void {
     const dialogRef = this.dialog.open(VoteDialogComponent, {
-      width: '250px',
+      width: '450px',
       data: { match: fixture }
     });
 
@@ -48,8 +51,7 @@ export class PrincipalPageComponent {
   submitVote(matchId: number, vote: number): void {
     this.fixtureService.voteFixture(matchId, vote).subscribe(
       response => {
-        console.log('Vote submitted successfully:', response);
-        this.getFixtures(); // Actualiza la lista de partidos después de votar
+        this.fixtureService.getFixtures();
       },
       error => {
         console.error('Error submitting vote:', error);
