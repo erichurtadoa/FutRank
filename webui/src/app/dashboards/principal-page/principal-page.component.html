@@ -24,12 +24,12 @@
           {{ fixture.season }}
         </td>
         <td>{{ fixture.date }}</td>
-        <td>{{ fixture.goalsHome }}</td>
-        <td>{{ fixture.goalsAway }}</td>
+        <td>{{ fixture.rate }}</td>
+        <td>{{ fixture.userNote }}</td>
         <td>
           <div class="actions-container">
-            <button mat-icon-button matTooltip="Agregar a favoritos">
-              <mat-icon>favorite_border</mat-icon>
+            <button mat-icon-button matTooltip="Vote" (click)="openVoteDialog(fixture.id)">
+              <mat-icon>star_outline</mat-icon>
             </button>
             <button mat-button matTooltip="Detalles">
               <mat-icon>arrow_forward</mat-icon>

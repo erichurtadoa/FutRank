@@ -25,5 +25,7 @@ namespace FutRank.Models
         public Venue Venue { get; set; }
         public Club HomeClub { get; set; }
         public Club AwayClub { get; set; }
+
+        public virtual ICollection<UserFixtures> UserFixtures { get; set; }
     }
 }

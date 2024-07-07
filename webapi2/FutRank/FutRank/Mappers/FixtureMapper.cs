@@ -24,7 +24,31 @@ namespace FutRank.Mappers
                 GoalsAway = entity.GoalsAway,
                 PenaltyHome = entity.PenaltyHome,
                 PenaltyAway = entity.PenaltyAway,
+                Rate = entity.Rate
+            };
+        }
+
+        public FixtureDto MapFixturetoDtoUser(Fixture entity, Guid userId)
+        {
+            return new FixtureDto
+            {
+                Id = entity.Id,
+                Referee = entity.Referee,
+                Date = NormalizeDate(entity.Date),
+                VenueId = entity.VenueId,
+                League = entity.League.Name,
+                Season = entity.Season,
+                Round = entity.Round,
+                HomeTeamId = entity.HomeTeamId,
+                LogoHome = entity.HomeClub.Logo,
+                AwayTeamId = entity.AwayTeamId,
+                LogoAway = entity.AwayClub.Logo,
+                GoalsHome = entity.GoalsHome,
+                GoalsAway = entity.GoalsAway,
+                PenaltyHome = entity.PenaltyHome,
+                PenaltyAway = entity.PenaltyAway,
                 Rate = entity.Rate,
+                UserNote = entity.UserFixtures.Where(x => x.UserId == userId).FirstOrDefault()?.UserNote
             };
         }
 

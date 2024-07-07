@@ -10,5 +10,6 @@ namespace FutRank.Models
         public string Username { get; set; }
         public string Email { get; set; }
         public virtual ICollection<UserClubs> UserClubs { get; set; }
+        public virtual ICollection<UserFixtures> UserFixtures { get; set; }
     }
 }

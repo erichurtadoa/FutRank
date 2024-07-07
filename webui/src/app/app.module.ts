@@ -3,6 +3,8 @@ import { ScreenManagerComponent } from './screen-manager/screen-manager.componen
 import { PrincipalPageComponent } from './dashboards/principal-page/principal-page.component';
 import { ClubRankPageComponent } from './dashboards/club-rank-page/club-rank-page.component';
 import { ClubDetailComponent } from './dashboards/club-detail/club-detail.component';
+import { RegisterDialogComponent } from './session/register-dialog/register-dialog.component';
+import { VoteDialogComponent } from './dialogs/vote-dialog/vote-dialog.component';
 
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -24,7 +26,8 @@ import { LoginDialogComponent } from './session/login-dialog/login-dialog.compon
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { RegisterDialogComponent } from './session/register-dialog/register-dialog.component';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,8 @@ import { RegisterDialogComponent } from './session/register-dialog/register-dial
     ClubRankPageComponent,
     ClubDetailComponent,
     LoginDialogComponent,
-    RegisterDialogComponent
+    RegisterDialogComponent,
+    VoteDialogComponent
   ],
   imports: [
     CommonModule,
@@ -51,11 +55,13 @@ import { RegisterDialogComponent } from './session/register-dialog/register-dial
     HttpClientModule,
     MatInputModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSliderModule,
+    MatTooltipModule
   ],
   providers: [
     SessionService,
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })

@@ -14,4 +14,6 @@ export interface Fixture {
   goalsAway?: number;
   PenaltyHome?: number;
   PenaltyAway?: number;
+  rate?: number;
+  userNote?: number;
 }

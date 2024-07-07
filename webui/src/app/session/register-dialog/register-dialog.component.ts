@@ -19,7 +19,7 @@ export class RegisterDialogComponent {
   }
 
   constructor(
-    public dialogRef: MatDialogRef<LoginDialogComponent>,
+    public dialogRef: MatDialogRef<RegisterDialogComponent>,
     private sessionService: SessionService,
     private router: Router
   ) {}

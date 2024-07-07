@@ -15,4 +15,8 @@ export class FixtureService {
   getFixtures(): Observable<Fixture[]> {
     return this.http.get<Fixture[]>(`${this.baseUrl}/All`);
   }
+
+  voteFixture(fixtureId: number, vote: number): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/Vote?fixtureId=${fixtureId}`, { vote });
+  }
 }

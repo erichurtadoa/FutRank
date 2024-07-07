@@ -1,5 +1,7 @@
 ﻿using FutRank.Dtos;
 using FutRank.Mappers;
+using FutRank.Models;
+using FutRank.Repositories.Implementation;
 using FutRank.Repositories.Interfaces;
 using FutRank.Services.Interfaces;
 
@@ -20,7 +22,25 @@ namespace FutRank.Services.Implementation
         {
             var fixtures = _fixtureRepository.GetFixturesAsync();
             return fixtures.Select(c => _mapper.MapFixturetoDto(c));
+        }
 
+        public IEnumerable<FixtureDto> GetFixturesUserAsync(Guid userId)
+        {
+            var fixtures = _fixtureRepository.GetFixturesAsync();
+            return fixtures.Select(c => _mapper.MapFixturetoDtoUser(c, userId));
+        }
+
+        public async Task VoteFixture(int vote, Guid userId, int fixtureId)
+        {
+            var userFixture = new UserFixtures
+            {
+                UserId = userId,
+                FixtureId = fixtureId,
+                UserNote = vote,
+            };
+            await _fixtureRepository.VoteFixtureAsync(userFixture);
+
+            await _fixtureRepository.UpdateFixtureNoteAsync(fixtureId);
         }
     }
 }

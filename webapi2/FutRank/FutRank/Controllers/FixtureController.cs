@@ -2,8 +2,11 @@
 using FutRank.Models;
 using FutRank.Services.Implementation;
 using FutRank.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
+using System.Security.Claims;
 
 namespace FutRank.Controllers
 {
@@ -12,16 +15,37 @@ namespace FutRank.Controllers
     public class FixtureController : ControllerBase
     {
         private readonly IFixtureService _fixtureService;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public FixtureController(IFixtureService fixtureService)
+        public FixtureController(IFixtureService fixtureService, UserManager<IdentityUser> userManager)
         {
             _fixtureService = fixtureService;
+            _userManager = userManager;
         }
 
         [HttpGet("All")]
         public IEnumerable<FixtureDto> GetFixtures()
         {
+            if (User.FindFirstValue(ClaimTypes.Sid) != null)
+            {
+                var userGuid = new Guid(User.FindFirstValue(ClaimTypes.Sid));
+                return _fixtureService.GetFixturesUserAsync(userGuid);
+            }
             return _fixtureService.GetFixturesAsync();
+        }
+
+        [HttpPost("Vote")]
+        [Authorize]
+        public async Task<IActionResult> VoteFixture([FromBody] int vote, int fixtureId)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.Sid);
+            var user = _userManager.FindByIdAsync(userId);
+
+            var userGuid = new Guid(userId);
+
+            await _fixtureService.VoteFixture(vote, userGuid, fixtureId);
+
+            return Ok();
         }
 
         [HttpPost("ConvertJson")]

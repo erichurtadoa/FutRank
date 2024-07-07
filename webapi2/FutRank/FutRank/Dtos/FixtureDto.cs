@@ -18,5 +18,6 @@
         public int? PenaltyHome { get; set; }
         public int? PenaltyAway { get; set; }
         public float? Rate { get; set; }
+        public int? UserNote {  get; set; }
     }
 }
