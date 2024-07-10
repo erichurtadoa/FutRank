@@ -44,7 +44,6 @@ namespace FutRank.Controllers
         public async Task<IActionResult> VoteClub([FromBody] bool upVote, int clubId)
         {
             var userId = User.FindFirstValue(ClaimTypes.Sid);
-            var user = _userManager.FindByIdAsync(userId);
 
             var userGuid = new Guid(userId);
 
@@ -58,7 +57,6 @@ namespace FutRank.Controllers
         public async Task<IActionResult> AddFavourite(int clubId)
         {
             var userId = User.FindFirstValue(ClaimTypes.Sid);
-            var user = _userManager.FindByIdAsync(userId);
 
             var userGuid = new Guid(userId);
 

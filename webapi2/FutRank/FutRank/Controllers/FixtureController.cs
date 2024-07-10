@@ -39,7 +39,6 @@ namespace FutRank.Controllers
         public async Task<IActionResult> VoteFixture([FromBody] int vote, int fixtureId)
         {
             var userId = User.FindFirstValue(ClaimTypes.Sid);
-            var user = _userManager.FindByIdAsync(userId);
 
             var userGuid = new Guid(userId);
 
@@ -74,7 +73,8 @@ namespace FutRank.Controllers
                     GoalsHome = fixture.Goals?.Home,
                     GoalsAway = fixture.Goals?.Away,
                     PenaltyHome = fixture.Score?.Penalty?.Home,
-                    PenaltyAway = fixture.Score?.Penalty?.Away
+                    PenaltyAway = fixture.Score?.Penalty?.Away,
+                    Timestamp = fixture.Fixture.Timestamp,
                 };
 
                 processedFixtures.Add(processedFixture);
@@ -99,6 +99,7 @@ namespace FutRank.Controllers
         public int? GoalsAway { get; set; }
         public int? PenaltyHome { get; set; }
         public int? PenaltyAway { get; set; }
+        public long? Timestamp {  get; set; }
     }
 
     public class Requestdto
@@ -116,7 +117,7 @@ namespace FutRank.Controllers
         public string? Referee { get; set; }
         public string Timezone { get; set; }
         public string Date { get; set; }
-        public long Timestamp { get; set; }
+        public long? Timestamp { get; set; }
         public Periods Periods { get; set; }
         public Venuedto Venue { get; set; }
         public Status Status { get; set; }

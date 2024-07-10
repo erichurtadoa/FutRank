@@ -18,7 +18,7 @@ export class ClubService {
   getClubs(): void {
     this.http.get<Club[]>(`${this.baseUrl}/All`).subscribe(clubs => {
       this.clubs.next(clubs);
-    });;
+    });
   }
 
   getClubById(id: number): Observable<ClubDetails> {

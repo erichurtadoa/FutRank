@@ -2,9 +2,10 @@ import { AppComponent } from './app.component';
 import { ScreenManagerComponent } from './screen-manager/screen-manager.component';
 import { PrincipalPageComponent } from './dashboards/principal-page/principal-page.component';
 import { ClubRankPageComponent } from './dashboards/club-rank-page/club-rank-page.component';
-import { ClubDetailComponent } from './dashboards/club-detail/club-detail.component';
+import { ClubDetailComponent } from './details-pages/club-detail/club-detail.component';
 import { RegisterDialogComponent } from './session/register-dialog/register-dialog.component';
 import { VoteDialogComponent } from './dialogs/vote-dialog/vote-dialog.component';
+import { ProfileComponent } from './details-pages/profile/profile.component';
 
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -38,7 +39,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     ClubDetailComponent,
     LoginDialogComponent,
     RegisterDialogComponent,
-    VoteDialogComponent
+    VoteDialogComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,

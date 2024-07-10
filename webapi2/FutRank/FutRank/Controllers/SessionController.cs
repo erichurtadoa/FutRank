@@ -21,13 +21,19 @@ namespace FutRank.Controllers
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly IConfiguration _configuration;
         private readonly SampleDBContext _context;
+        private readonly IUserService _userService;
 
-        public SessionController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IConfiguration configuration, SampleDBContext context)
+        public SessionController(UserManager<IdentityUser> userManager, 
+            SignInManager<IdentityUser> signInManager, 
+            IConfiguration configuration, 
+            SampleDBContext context, 
+            IUserService userService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _configuration = configuration;
             _context = context;
+            _userService = userService;
         }
 
         [HttpPost("Register")]
@@ -83,6 +89,17 @@ namespace FutRank.Controllers
             }
 
             return BadRequest(ModelState);
+        }
+
+        [HttpGet("User")]
+        [Authorize]
+        public async Task<UserDetailsDto> GetUserDetails()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.Sid);
+
+            var userGuid = new Guid(userId);
+
+            return await _userService.GetUserDetailsAsync(userGuid);
         }
 
         private string GenerateJwtToken(IdentityUser user)

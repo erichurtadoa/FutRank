@@ -63,7 +63,7 @@ namespace FutRank.Repositories.Implementation
             {
                 var auxNote = notes.Aggregate(0, (sum, n) => (int)(sum + n));
 
-                var fixtureNote = (float)(auxNote / totalNotes);
+                var fixtureNote = (float)auxNote / totalNotes;
 
                 fixture.Rate = fixtureNote;
             }

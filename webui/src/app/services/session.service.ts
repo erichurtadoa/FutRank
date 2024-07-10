@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { UserSession } from '../models/userSession';
 import { UserRegister } from '../models/userRegister';
+import { UserDetails } from '../models/userDetails';
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +38,10 @@ export class SessionService {
 
   getToken(): string | null {
     return localStorage.getItem('jwtToken');
+  }
+
+  getUser(): Observable<UserDetails> {
+    return this.http.get<UserDetails>(`${this.baseUrl}/User`);
   }
 
   logout(): void {

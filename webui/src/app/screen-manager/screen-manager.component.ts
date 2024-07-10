@@ -45,6 +45,10 @@ export class ScreenManagerComponent {
     });
   }
 
+  navigateToProfile(): void {
+    this.router.navigateByUrl('profile');
+  }
+
   logout(): void {
     this.sessionService.logout();
     this.isLoggedIn = false;
