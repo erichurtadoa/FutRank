@@ -91,6 +91,9 @@ namespace FutRank.Models
 
             modelBuilder.Entity<UserInfo>(entity => {
                 entity.HasKey(k => k.Id);
+                entity.HasOne(v => v.FavouriteClub)
+                .WithMany()
+                .HasForeignKey(v => v.FavouriteClubId);
             });
 
             modelBuilder.Entity<UserFixtures>(entity => {

@@ -16,9 +16,9 @@ namespace FutRank.Mappers
                 Logo = entity.Logo,
                 Popularity = entity.Popularity,
                 Country = entity.CountryName,
-                Flag = entity.Country.Image,
+                Flag = entity.Country?.Image,
                 Venue = entity.VenueId,
-                City = entity.Venue.City
+                City = entity.Venue?.City
             };
         }
 

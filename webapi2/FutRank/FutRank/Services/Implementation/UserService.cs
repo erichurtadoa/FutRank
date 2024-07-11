@@ -23,6 +23,7 @@ namespace FutRank.Services.Implementation
         public async Task<UserDetailsDto> GetUserDetailsAsync(Guid userId)
         {
             var user = await _userRepository.GetUserDetailsAsync(userId);
+            var fuser = user.UserFixtures;
             var userDto = _userMapper.MapUserToDto(user);
             userDto.FavouriteClub = _clubMapper.MapClubtoDto(user.FavouriteClub);
             return userDto;

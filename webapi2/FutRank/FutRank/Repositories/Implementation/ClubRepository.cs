@@ -94,6 +94,10 @@ namespace FutRank.Repositories.Implementation
                 _context.UserClubs.Add(userClubs);
             }
 
+            var user = await _context.UsersInfo.Where(x => x.Id == userClubs.UserId).FirstOrDefaultAsync();
+
+            user.FavouriteClubId = existedUser.ClubId; 
+
             _context.SaveChanges();
         }
     }

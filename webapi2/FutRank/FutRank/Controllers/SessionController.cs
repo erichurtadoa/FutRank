@@ -58,6 +58,7 @@ namespace FutRank.Controllers
                         Id = new Guid(user.Id),
                         Username = user.UserName,
                         Email = user.Email,
+                        DateSignUp = DateTime.Now.ToString()
                     };
                     _context.UsersInfo.Add(userInfo);
                     _context.SaveChanges();
@@ -100,6 +101,19 @@ namespace FutRank.Controllers
             var userGuid = new Guid(userId);
 
             return await _userService.GetUserDetailsAsync(userGuid);
+        }
+
+        [HttpPost("Set")]
+        [Authorize]
+        public IActionResult SetDate()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.Sid);
+            var userGuid = new Guid(userId);
+            var userInfo = _context.UsersInfo.Where(x => x.Id == userGuid).FirstOrDefault();
+            userInfo.DateSignUp = DateTime.Now.ToString();
+            _context.SaveChanges();
+            return Ok();
+
         }
 
         private string GenerateJwtToken(IdentityUser user)
