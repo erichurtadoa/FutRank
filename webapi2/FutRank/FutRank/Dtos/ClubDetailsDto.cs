@@ -13,7 +13,7 @@
         public string? flag { get; set; }
         public string? VenueName { get; set; }
         public string? VenueAddress { get; set; }
-        public int VenueCapacity { get; set; }
+        public int? VenueCapacity { get; set; }
         public string? VenueSurface { get; set; }
         public string? VenueImage { get; set; }
         public string? VenueCity { get; set; }

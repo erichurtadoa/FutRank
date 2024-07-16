@@ -1,1 +1,85 @@
-<p>profile works!</p>
+<div class="profile-container">
+  <div class="profile-header">
+    <h1>User Profile</h1>
+  </div>
+
+  <div *ngIf="user" class="profile-card">
+    <div class="profile-picture">
+      <mat-icon>face</mat-icon>
+    </div>
+    <div class="profile-info">
+      <h2>{{ user.username }}</h2>
+      <p *ngIf="user.name"><strong>Name:</strong> {{ user.name }}</p>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <p><strong>Since:</strong> {{ date | date:'dd/MM/yyyy' }}</p>
+      <p><strong>Watched time:</strong> {{ user.fixtureTime }} minutes</p>
+      <div *ngIf="user.favouriteClub">
+        <p><strong>Favourite Club:</strong> {{ user.favouriteClub.name }}</p>
+        <img [src]="user.favouriteClub.logo" style="height: 70px;">
+      </div>
+    </div>
+  </div>
+  <div class="profile-actions">
+    <button (click)="toggleTables()">Show/Hide Tables</button>
+  </div>
+
+  <div class="profile-tables" *ngIf="showTables">
+    <div class="table-container">
+      <h2>Matches</h2>
+      <table *ngIf="userFixtures">
+        <thead>
+          <tr>
+            <th>Match</th>
+            <th>Competition</th>
+            <th>Date</th>
+            <th>Note</th>
+            <th>Your note</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let fixture of userFixtures">
+            <td>
+              <div class="logos-container">
+                <img [src]="fixture.logoHome" style="height: 60px;">
+                <img [src]="fixture.logoAway" style="height: 60px;">
+              </div>
+            </td>
+            <td>
+              {{ fixture.league }}
+              {{ fixture.season }}
+            </td>
+            <td>{{ fixture.date }}</td>
+            <td>{{ fixture.rate }}</td>
+            <td>{{ fixture.userNote }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-container">
+      <h2>Clubs</h2>
+      <table *ngIf="userClubs">
+        <thead>
+          <tr>
+            <th>Logo</th>
+            <th>Name</th>
+            <th>Popularity</th>
+            <th>Vote</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let club of userClubs">
+            <td><img [src]="club.logo" style="height: 70px;"></td>
+            <td>{{ club.name }}</td>
+            <td>{{ club.popularity }}</td>
+            <td>
+              <mat-icon class="icon-vote" [ngStyle]="{'color': club.upvote ? 'blue' : 'red'}" >
+                {{ club.upvote ? 'thumb_up' : 'thumb_down' }}
+              </mat-icon>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

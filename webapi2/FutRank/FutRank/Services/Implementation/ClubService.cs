@@ -10,11 +10,13 @@ namespace FutRank.Services.Implementation
     {
         private readonly IClubRepository _clubRepository;
         private readonly ClubMapper _mapper;
+        private readonly IUserRepository _userRepository;
 
-        public ClubService(IClubRepository clubRepository, ClubMapper mapper)
+        public ClubService(IClubRepository clubRepository, ClubMapper mapper, IUserRepository userRepository)
         {
             _clubRepository = clubRepository;
             _mapper = mapper;
+            _userRepository = userRepository;
         }
 
         public IEnumerable<ClubDto> GetClubsAsync()
@@ -27,6 +29,14 @@ namespace FutRank.Services.Implementation
         {
             var clubs = _clubRepository.GetClubsAsync();
             return clubs.Select(c => _mapper.MapClubtoDtoUser(c, userId));
+        }
+
+        public async Task<IEnumerable<ClubDto>> GetOnlyClubsUserAsync(Guid userId)
+        {
+            var user = await _userRepository.GetUserDetailsAsync(userId);
+            var userClubs = user.UserClubs.Select(x => x.Club);
+            var userClubsDto = userClubs.Select(c => _mapper.MapClubtoDtoUser(c, userId)).Where(x => x.Upvote != null);
+            return userClubsDto.OrderByDescending(u => u.Popularity);
         }
 
         public ClubDetailsDto GetClubByIdAsync(int id)

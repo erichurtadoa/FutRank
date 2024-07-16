@@ -1,0 +1,107 @@
+/* user-profile.component.css */
+.profile-container {
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f4f6f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-card {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-picture {
+  flex: 0 0 150px;
+  margin-right: 20px;
+}
+
+.mat-icon {
+  height: 100px !important;
+  width: 100px !important;
+}
+
+.material-icons {
+  font-size: 100px !important;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-info h2 {
+  margin-top: 0;
+}
+
+.profile-actions {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.profile-actions button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.profile-actions button:hover {
+  background-color: #0056b3;
+}
+
+.profile-tables {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.table-container {
+  width: 48%;
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.icon-vote {
+  font-size: 25px !important;
+  height: inherit !important;
+  width: inherit !important;
+}

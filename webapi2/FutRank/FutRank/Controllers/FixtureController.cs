@@ -1,5 +1,6 @@
 ﻿using FutRank.Dtos;
 using FutRank.Models;
+using FutRank.Repositories.Interfaces;
 using FutRank.Services.Implementation;
 using FutRank.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -32,6 +33,13 @@ namespace FutRank.Controllers
                 return await _fixtureService.GetFixturesUserAsync(userGuid);
             }
             return await _fixtureService.GetFixturesAsync();
+        }
+
+        [HttpGet("UserFixtures/{userId}")]
+        [Authorize]
+        public async Task<IEnumerable<FixtureDto>> GetUserFixtures(Guid userId)
+        {
+            return await _fixtureService.GetOnlyFixturesUserAsync(userId);
         }
 
         [HttpPost("Vote")]
