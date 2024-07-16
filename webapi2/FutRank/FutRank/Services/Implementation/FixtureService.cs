@@ -11,11 +11,13 @@ namespace FutRank.Services.Implementation
     {
         private readonly IFixtureRepository _fixtureRepository;
         private readonly FixtureMapper _mapper;
+        private readonly IUserRepository _userRepository;
 
-        public FixtureService(IFixtureRepository fixtureRepository, FixtureMapper mapper)
+        public FixtureService(IFixtureRepository fixtureRepository, FixtureMapper mapper, IUserRepository userRepository)
         {
             _fixtureRepository = fixtureRepository;
             _mapper = mapper;
+            _userRepository = userRepository;
         }
 
         public async Task<IEnumerable<FixtureDto>> GetFixturesAsync()
@@ -28,6 +30,14 @@ namespace FutRank.Services.Implementation
         {
             var fixtures = await _fixtureRepository.GetFixturesAsync();
             return fixtures.Select(c => _mapper.MapFixturetoDtoUser(c, userId));
+        }
+
+        public async Task<IEnumerable<FixtureDto>> GetOnlyFixturesUserAsync(Guid userId)
+        {
+            var user = await _userRepository.GetUserDetailsAsync(userId);
+            var userFixtures = user.UserFixtures.Select(x => x.Fixture);
+            var userFIxturesDto = userFixtures.Select(c => _mapper.MapFixturetoDtoUser(c, userId));
+            return userFIxturesDto.OrderByDescending(u => u.UserNote);
         }
 
         public async Task VoteFixture(int vote, Guid userId, int fixtureId)

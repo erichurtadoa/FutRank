@@ -17,10 +17,14 @@ namespace FutRank.Repositories.Implementation
 
         public async Task<UserInfo> GetUserDetailsAsync(Guid userId)
         {
-            return (UserInfo)await _context.UsersInfo
+            return await _context.UsersInfo
                 .Where(u => u.Id == userId)
                 .Include(u => u.UserClubs)
+                    .ThenInclude(c => c.Club)
+                        .ThenInclude(c => c.Country)
                 .Include(u => u.UserFixtures)
+                    .ThenInclude(f => f.Fixture)
+                        .ThenInclude(f => f.League)
                 .Include(u => u.FavouriteClub)
                 .FirstOrDefaultAsync();
         }

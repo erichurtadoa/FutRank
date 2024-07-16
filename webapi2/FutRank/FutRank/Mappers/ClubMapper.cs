@@ -34,9 +34,9 @@ namespace FutRank.Mappers
                 Logo = entity.Logo,
                 Popularity = entity.Popularity,
                 Country = entity.CountryName,
-                Flag = entity.Country.Image,
+                Flag = entity.Country?.Image,
                 Venue = entity.VenueId,
-                City = entity.Venue.City,
+                City = entity.Venue?.City,
                 Favourite = entity.UserClubs.Where(x => x.UserId == userId).FirstOrDefault()?.Favourite,
                 Upvote = entity.UserClubs.Where(x => x.UserId == userId).FirstOrDefault()?.UpVote
             };
@@ -54,13 +54,13 @@ namespace FutRank.Mappers
                 Logo = entity.Logo,
                 Popularity = entity.Popularity,
                 Country = entity.CountryName,
-                flag = entity.Country.Image,
-                VenueName = entity.Venue.Name,
-                VenueAddress = entity.Venue.Address,
-                VenueCapacity = entity.Venue.Capacity,
-                VenueSurface = entity.Venue.Surface,
-                VenueImage = entity.Venue.Image,
-                VenueCity = entity.Venue.City
+                flag = entity.Country?.Image,
+                VenueName = entity.Venue?.Name,
+                VenueAddress = entity.Venue?.Address,
+                VenueCapacity = entity.Venue?.Capacity,
+                VenueSurface = entity.Venue?.Surface,
+                VenueImage = entity.Venue?.Image,
+                VenueCity = entity.Venue?.City
             };
         }
     }

@@ -33,6 +33,13 @@ namespace FutRank.Controllers
             return _clubService.GetClubsAsync();
         }
 
+        [HttpGet("UserClubs/{userId}")]
+        [Authorize]
+        public async Task<IEnumerable<ClubDto>> GetUserClubs(Guid userId)
+        {
+            return await _clubService.GetOnlyClubsUserAsync(userId);
+        }
+
         [HttpGet("{id}")]
         public ClubDetailsDto GetClubById(int id)
         {

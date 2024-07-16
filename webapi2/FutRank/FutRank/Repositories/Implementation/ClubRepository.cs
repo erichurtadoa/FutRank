@@ -40,7 +40,12 @@ namespace FutRank.Repositories.Implementation
             if (existedUser != null)
             {
                 if (existedUser.UpVote == userClubs.UpVote)
+                {
                     existedUser.UpVote = null;
+
+                    if (existedUser.Favourite == null)
+                        _context.UserClubs.Remove(existedUser);
+                }
 
                 else 
                     existedUser.UpVote = userClubs.UpVote;

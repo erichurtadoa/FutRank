@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Club } from '../models/club';
 import { ClubDetails } from '../models/clubDetails';
+import { Guid } from 'guid-typescript';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,10 @@ export class ClubService {
     this.http.get<Club[]>(`${this.baseUrl}/All`).subscribe(clubs => {
       this.clubs.next(clubs);
     });
+  }
+
+  getUserClubs(userId: Guid): Observable<Club[]> {
+    return this.http.get<Club[]>(`${this.baseUrl}/UserClubs/${userId}`);
   }
 
   getClubById(id: number): Observable<ClubDetails> {

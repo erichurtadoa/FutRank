@@ -32,7 +32,14 @@ namespace FutRank.Repositories.Implementation
 
             if (existedUser != null)
             {
-                existedUser.UserNote = userFixture.UserNote;
+                if (userFixture.UserNote == null)
+                {
+                    _context.UserFixtures.Remove(existedUser);
+                }
+                else
+                {
+                    existedUser.UserNote = userFixture.UserNote;
+                }
             }
 
             else
