@@ -15,15 +15,32 @@ namespace FutRank.Repositories.Implementation
             _context = context;
         }
 
-        public async Task<IEnumerable<Fixture>> GetFixturesAsync()
+        public async Task<IEnumerable<Fixture>> GetFixturesAsync(FixtureFilter filter)
         {
-            var fixture =  _context.Fixture.Include(fixture => fixture.Venue)
-                .Include(fixture => fixture.League)
-                .Include(fixture => fixture.HomeClub)
-                .Include(fixture => fixture.AwayClub)
-                .Include(fixture => fixture.UserFixtures)
-                .ToList();
-            return fixture;
+            var query = _context.Fixture
+            .Include(f => f.Venue)
+            .Include(f => f.League)
+            .Include(f => f.HomeClub)
+            .Include(f => f.AwayClub)
+            .Include(f => f.UserFixtures)
+            .AsQueryable();
+
+            if (!string.IsNullOrEmpty(filter.League))
+            {
+                query = query.Where(f => f.League.Name == filter.League);
+            }
+
+            if (!string.IsNullOrEmpty(filter.Season))
+            {
+                query = query.Where(f => f.Season == filter.Season);
+            }
+
+            if (!string.IsNullOrEmpty(filter.Team))
+            {
+                query = query.Where(f => f.HomeClub.Name.Contains(filter.Team) || f.AwayClub.Name.Contains(filter.Team));
+            }
+
+            return await query.ToListAsync();
         }
 
         public async Task VoteFixtureAsync(UserFixtures userFixture)

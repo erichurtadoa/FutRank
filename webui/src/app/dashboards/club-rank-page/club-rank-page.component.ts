@@ -3,6 +3,9 @@ import { Club } from '../../models/club';
 import { ClubService } from '../../services/club.service';
 import { Router } from '@angular/router';
 import { SessionService } from '../../services/session.service';
+import { ClubFilterDialogComponent } from '../../dialogs/club-filter-dialog/club-filter-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
+import { ClubFilter } from '../../models/club-filter copy';
 
 @Component({
   selector: 'app-club-rank-page',
@@ -12,14 +15,22 @@ import { SessionService } from '../../services/session.service';
 
 export class ClubRankPageComponent implements OnInit {
   dataSource: Club[] = [];
+  clubFilter: ClubFilter;
 
   constructor(
     private clubService: ClubService,
     private router: Router,
-    private sessionService: SessionService
+    private sessionService: SessionService,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
+    if (this.clubFilter == null) {
+      this.clubFilter = {
+        team: '',
+        country: ''
+      }
+    }
     this.getClubs();
   }
 
@@ -29,10 +40,24 @@ export class ClubRankPageComponent implements OnInit {
     });
 
     this.sessionService.isLoggedIn.subscribe(loggedIn => {
-        this.clubService.getClubs();
+        this.clubService.getClubs(this.clubFilter);
     });
 
-    this.clubService.getClubs();
+    //this.clubService.getClubs(this.clubFilter);
+  }
+
+  openFilterDialog(): void {
+    const dialogRef = this.dialog.open(ClubFilterDialogComponent, {
+      width: '450px',
+      data: { filter: this.clubFilter }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.clubFilter = result;
+        this.clubService.getClubs(this.clubFilter);
+      }
+    });
   }
 
   public navigateToDetails(id: number) {
@@ -43,15 +68,16 @@ export class ClubRankPageComponent implements OnInit {
   public upVote(vote: boolean, clubId: number) {
     this.clubService.upVote(vote, clubId).subscribe(
       response => {
-        this.clubService.getClubs();
-      }
+        this.clubService.getClubs(this.clubFilter);
+      },
+      error => {}
     )
   }
 
   public addFavourite(clubId: number) {
     this.clubService.addFavourite(clubId).subscribe(
       response => {
-        this.clubService.getClubs();
+        this.clubService.getClubs(this.clubFilter);
       }
     )
   }

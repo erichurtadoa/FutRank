@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>Filter</h1>
+<div mat-dialog-content>
+  <form [formGroup]="filterForm">
+    <mat-form-field>
+      <mat-label>Search Team</mat-label>
+      <input matInput formControlName="team" placeholder="Type something">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>League</mat-label>
+      <mat-select formControlName="league">
+        <mat-option *ngFor="let category of leagues" [value]="category">
+          {{ category }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Season</mat-label>
+      <mat-select formControlName="season">
+        <mat-option *ngFor="let category of seasons" [value]="category">
+          {{ category }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <span class="spacer"></span>
+  <button mat-button [mat-dialog-close]="filterForm.value">Apply</button>
+</div>
+

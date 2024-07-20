@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Fixture } from '../models/fixture';
 import { Guid } from 'guid-typescript';
+import { FixtureFilter } from '../models/fixture-filter';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +16,19 @@ export class FixtureService {
 
   constructor(private http: HttpClient) { }
 
-  getFixtures(): void {
-    this.http.get<Fixture[]>(`${this.baseUrl}/All`).subscribe(fixtures => {
+  getFixtures(fixtureFilter: FixtureFilter): void {
+    let params = new HttpParams();
+
+    if (fixtureFilter.team) {
+      params = params.set('team', fixtureFilter.team);
+    }
+    if (fixtureFilter.league) {
+      params = params.set('league', fixtureFilter.league);
+    }
+    if (fixtureFilter.season) {
+      params = params.set('season', fixtureFilter.season);
+    }
+    this.http.get<Fixture[]>(`${this.baseUrl}/All`, { params }).subscribe(fixtures => {
       this.fixtures.next(fixtures)
     });
   }

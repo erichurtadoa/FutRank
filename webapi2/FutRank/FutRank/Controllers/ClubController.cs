@@ -23,14 +23,14 @@ namespace FutRank.Controllers
         }
 
         [HttpGet("All")]
-        public IEnumerable<ClubDto> GetClubs()
+        public IEnumerable<ClubDto> GetClubs([FromQuery] ClubFilter filter)
         {
             if (User.FindFirstValue(ClaimTypes.Sid) != null)
             {
                 var userGuid = new Guid(User.FindFirstValue(ClaimTypes.Sid));
-                return _clubService.GetClubsUserAsync(userGuid);
+                return _clubService.GetClubsUserAsync(userGuid, filter);
             }
-            return _clubService.GetClubsAsync();
+            return _clubService.GetClubsAsync(filter);
         }
 
         [HttpGet("UserClubs/{userId}")]

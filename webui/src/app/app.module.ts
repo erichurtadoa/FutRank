@@ -6,6 +6,8 @@ import { ClubDetailComponent } from './details-pages/club-detail/club-detail.com
 import { RegisterDialogComponent } from './session/register-dialog/register-dialog.component';
 import { VoteDialogComponent } from './dialogs/vote-dialog/vote-dialog.component';
 import { ProfileComponent } from './details-pages/profile/profile.component';
+import { FixtureFilterDialogComponent } from './dialogs/fixture-filter-dialog/fixture-filter-dialog.component';
+import { ClubFilterDialogComponent } from './dialogs/club-filter-dialog/club-filter-dialog.component';
 
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -29,6 +31,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     LoginDialogComponent,
     RegisterDialogComponent,
     VoteDialogComponent,
-    ProfileComponent
+    ProfileComponent,
+    FixtureFilterDialogComponent,
+    ClubFilterDialogComponent
   ],
   imports: [
     CommonModule,
@@ -60,7 +65,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatDialogModule,
     MatSliderModule,
     MatTooltipModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   providers: [
     SessionService,

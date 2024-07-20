@@ -1,11 +1,12 @@
 ﻿using FutRank.Dtos;
+using FutRank.Models;
 
 namespace FutRank.Services.Interfaces
 {
     public interface IFixtureService
     {
-        Task<IEnumerable<FixtureDto>> GetFixturesAsync();
-        Task<IEnumerable<FixtureDto>> GetFixturesUserAsync(Guid userId);
+        Task<IEnumerable<FixtureDto>> GetFixturesAsync(FixtureFilter filter);
+        Task<IEnumerable<FixtureDto>> GetFixturesUserAsync(Guid userId, FixtureFilter filter);
         Task<IEnumerable<FixtureDto>> GetOnlyFixturesUserAsync(Guid userId);
         Task VoteFixture(int vote, Guid userId, int fixtureId);
     }

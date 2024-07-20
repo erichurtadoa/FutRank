@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Club } from '../models/club';
 import { ClubDetails } from '../models/clubDetails';
 import { Guid } from 'guid-typescript';
+import { ClubFilter } from '../models/club-filter copy';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +17,16 @@ export class ClubService {
 
   constructor(private http: HttpClient) { }
 
-  getClubs(): void {
-    this.http.get<Club[]>(`${this.baseUrl}/All`).subscribe(clubs => {
+  getClubs(clubFilter: ClubFilter): void {
+    let params = new HttpParams();
+
+    if (clubFilter.team) {
+      params = params.set('team', clubFilter.team);
+    }
+    if (clubFilter.country) {
+      params = params.set('league', clubFilter.country);
+    }
+    this.http.get<Club[]>(`${this.baseUrl}/All`, { params }).subscribe(clubs => {
       this.clubs.next(clubs);
     });
   }
