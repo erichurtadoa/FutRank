@@ -1,4 +1,5 @@
-﻿using FutRank.Dtos;
+﻿using FutRank.Controllers;
+using FutRank.Dtos;
 using FutRank.Mappers;
 using FutRank.Models;
 using FutRank.Repositories.Implementation;
@@ -20,16 +21,18 @@ namespace FutRank.Services.Implementation
             _userRepository = userRepository;
         }
 
-        public async Task<IEnumerable<FixtureDto>> GetFixturesAsync()
+        public async Task<IEnumerable<FixtureDto>> GetFixturesAsync(FixtureFilter filter)
         {
-            var fixtures = await _fixtureRepository.GetFixturesAsync();
-            return fixtures.Select(c => _mapper.MapFixturetoDto(c));
+            var fixtures = await _fixtureRepository.GetFixturesAsync(filter);
+            var fixtureDto = fixtures.Select(c => _mapper.MapFixturetoDto(c));
+            return fixtureDto.OrderByDescending(u => u.Rate);
         }
 
-        public async Task<IEnumerable<FixtureDto>> GetFixturesUserAsync(Guid userId)
+        public async Task<IEnumerable<FixtureDto>> GetFixturesUserAsync(Guid userId, FixtureFilter filter)
         {
-            var fixtures = await _fixtureRepository.GetFixturesAsync();
-            return fixtures.Select(c => _mapper.MapFixturetoDtoUser(c, userId));
+            var fixtures = await _fixtureRepository.GetFixturesAsync(filter);
+            var fixtureDto = fixtures.Select(c => _mapper.MapFixturetoDtoUser(c, userId));
+            return fixtureDto.OrderByDescending(u => u.Rate);
         }
 
         public async Task<IEnumerable<FixtureDto>> GetOnlyFixturesUserAsync(Guid userId)

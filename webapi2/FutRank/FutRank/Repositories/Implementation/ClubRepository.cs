@@ -15,13 +15,24 @@ namespace FutRank.Repositories.Implementation
             _context = context;
         }
 
-        public IEnumerable<Club> GetClubsAsync()
+        public IEnumerable<Club> GetClubsAsync(ClubFilter filter)
         {
-            var clubs =  _context.Clubs.Include(club => club.Venue)
+            var query =  _context.Clubs
+                .Include(club => club.Venue)
                 .Include(club => club.Country)
                 .Include(club => club.UserClubs)
-                .ToList();
-            return clubs.OrderByDescending(club => club.Popularity);
+                .AsQueryable();
+
+            if (!string.IsNullOrEmpty(filter.Team))
+            {
+                query = query.Where(f => f.Name.Contains(filter.Team));
+            }
+
+            if (!string.IsNullOrEmpty(filter.Country))
+            {
+                query = query.Where(f => f.Country.Name.Contains(filter.Country));
+            }
+            return query.ToList().OrderByDescending(club => club.Popularity);
         }
 
         public Club GetClubById(int id)

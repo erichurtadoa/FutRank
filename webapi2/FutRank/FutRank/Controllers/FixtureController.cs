@@ -25,14 +25,14 @@ namespace FutRank.Controllers
         }
 
         [HttpGet("All")]
-        public async Task<IEnumerable<FixtureDto>> GetFixtures()
+        public async Task<IEnumerable<FixtureDto>> GetFixtures([FromQuery] FixtureFilter filter)
         {
             if (User.FindFirstValue(ClaimTypes.Sid) != null)
             {
                 var userGuid = new Guid(User.FindFirstValue(ClaimTypes.Sid));
-                return await _fixtureService.GetFixturesUserAsync(userGuid);
+                return await _fixtureService.GetFixturesUserAsync(userGuid, filter);
             }
-            return await _fixtureService.GetFixturesAsync();
+            return await _fixtureService.GetFixturesAsync(filter);
         }
 
         [HttpGet("UserFixtures/{userId}")]

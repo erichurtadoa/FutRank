@@ -19,15 +19,15 @@ namespace FutRank.Services.Implementation
             _userRepository = userRepository;
         }
 
-        public IEnumerable<ClubDto> GetClubsAsync()
+        public IEnumerable<ClubDto> GetClubsAsync(ClubFilter filter)
         {
-            var clubs = _clubRepository.GetClubsAsync();
+            var clubs = _clubRepository.GetClubsAsync(filter);
             return clubs.Select(c => _mapper.MapClubtoDto(c));
         }
 
-        public IEnumerable<ClubDto> GetClubsUserAsync(Guid userId)
+        public IEnumerable<ClubDto> GetClubsUserAsync(Guid userId, ClubFilter filter)
         {
-            var clubs = _clubRepository.GetClubsAsync();
+            var clubs = _clubRepository.GetClubsAsync(filter);
             return clubs.Select(c => _mapper.MapClubtoDtoUser(c, userId));
         }
 
