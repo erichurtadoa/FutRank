@@ -43,6 +43,12 @@ namespace FutRank.Services.Implementation
             return userFIxturesDto.OrderByDescending(u => u.UserNote);
         }
 
+        public async Task<FixtureDetailsDto> GetFixtureByIdAsync(int id, Guid userId)
+        {
+            var fixture = await _fixtureRepository.GetFixtureByIdAsync(id);
+            return _mapper.MapFixturetoDetailsDto(fixture, userId);
+        }
+
         public async Task VoteFixture(int vote, Guid userId, int fixtureId)
         {
             var userFixture = new UserFixtures

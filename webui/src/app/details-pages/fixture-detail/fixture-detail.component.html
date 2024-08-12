@@ -1,0 +1,40 @@
+<div *ngIf='fixture' class="fixture-container">
+  <div class="fixture-card">
+    <div class="fixture-header">
+      <div class="team">
+        <img [src]="fixture.logoHome" alt="Logo Home Team">
+        <h3>{{fixture.homeTeamName}}</h3>
+      </div>
+      <div class="match-info">
+        <h2>{{ fixture.goalsHome || 0 }} - {{ fixture.goalsAway || 0 }}</h2>
+        <p *ngIf="fixture.PenaltyHome !== undefined && fixture.PenaltyAway !== undefined">
+          (Penalty: {{ fixture.PenaltyHome }} - {{ fixture.PenaltyAway }})
+        </p>
+        <p>{{ fixture.date | date:'dd/MM/yyyy' }}</p>
+      </div>
+      <div class="team">
+        <img [src]="fixture.logoAway" alt="Logo Away Team">
+        <h3>{{fixture.awayTeamName}}</h3>
+      </div>
+    </div>
+
+    <div class="fixture-stadium">
+      <img [src]="fixture.venueImage" alt="Foto del Estadio">
+      <h4>{{ fixture.venueName }}</h4>
+    </div>
+
+    <div class="fixture-details">
+      <p><strong>Referee:</strong> {{ fixture.referee || 'Desconocido' }}</p>
+      <p><strong>Competition:</strong> {{ fixture.league }}</p>
+      <p><strong>Season:</strong> {{ fixture.season || 'N/A' }}</p>
+      <p><strong>Journey:</strong> {{ fixture.round || 'N/A' }}</p>
+      <p><strong>Rate: </strong> <span class="rate">{{ fixture.rate || 'N/A' }} ★</span></p>
+      <p><strong>Your rate:</strong>
+        <span class="user-note" (click)="openVoteDialog(fixture)">
+          {{ fixture.userNote || 'RATE' }} ★
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
+

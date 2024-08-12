@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { Fixture } from '../models/fixture';
 import { Guid } from 'guid-typescript';
 import { FixtureFilter } from '../models/fixture-filter';
+import { FixtureDetails } from '../models/fixtureDetails';
 
 @Injectable({
   providedIn: 'root'
@@ -35,6 +36,10 @@ export class FixtureService {
 
   getUserFixtures(userId: Guid): Observable<Fixture[]> {
     return this.http.get<Fixture[]>(`${this.baseUrl}/UserFixtures/${userId}`);
+  }
+
+  getFixtureById(id: number): Observable<FixtureDetails> {
+    return this.http.get<FixtureDetails>(`${this.baseUrl}/${id}`);
   }
 
   voteFixture(fixtureId: number, vote: number): Observable<any> {

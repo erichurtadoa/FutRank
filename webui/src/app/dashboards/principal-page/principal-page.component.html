@@ -37,7 +37,7 @@
             <button mat-icon-button matTooltip="Vote" (click)="openVoteDialog(fixture)" style="color: darkgoldenrod;">
               <mat-icon>{{ fixture.userNote ? 'star' : 'star_outline' }}</mat-icon>
             </button>
-            <button mat-button matTooltip="Detalles">
+            <button mat-button matTooltip="Detalles" (click)="navigateToDetails(fixture.id)">
               <mat-icon>arrow_forward</mat-icon>
             </button>
           </div>

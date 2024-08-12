@@ -1,0 +1,97 @@
+.fixture-container {
+  margin: auto;
+  padding: 20px;
+  background-color: #f4f6f9;
+  font-family: 'Arial', sans-serif;
+}
+
+.fixture-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.fixture-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #4c00ff;
+  color: #fff;
+}
+
+.team {
+  text-align: center;
+}
+
+.team img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background-color: #ffffff;
+}
+
+.match-info {
+  text-align: center;
+}
+
+.match-info h2 {
+  font-size: 48px;
+  margin: 0;
+}
+
+.match-info p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #eaeaea;
+}
+
+.fixture-stadium {
+  text-align: center;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.fixture-stadium img {
+  width: 75%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.fixture-stadium h4 {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+.fixture-details {
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.fixture-details p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.fixture-details strong {
+  color: #4c00ff;
+}
+
+.rate, .user-note {
+  font-weight: bold;
+  color: #ffbf00;
+}
+
+.user-note {
+  cursor: pointer;
+}
+
+.user-note:hover {
+  text-decoration: underline;
+}
