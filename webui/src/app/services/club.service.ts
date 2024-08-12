@@ -4,7 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { Club } from '../models/club';
 import { ClubDetails } from '../models/clubDetails';
 import { Guid } from 'guid-typescript';
-import { ClubFilter } from '../models/club-filter copy';
+import { ClubFilter } from '../models/club-filter';
 
 @Injectable({
   providedIn: 'root'

@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { SessionService } from '../../services/session.service';
 import { ClubFilterDialogComponent } from '../../dialogs/club-filter-dialog/club-filter-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
-import { ClubFilter } from '../../models/club-filter copy';
+import { ClubFilter } from '../../models/club-filter';
 
 @Component({
   selector: 'app-club-rank-page',

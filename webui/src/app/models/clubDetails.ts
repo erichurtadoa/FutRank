@@ -14,4 +14,13 @@ export interface ClubDetails {
   venueSurface: string;
   venueImage: string;
   venueCity: string;
+  favourite?: boolean;
+  upvote?: boolean;
+  standings?: Standing[]
+}
+
+export interface Standing {
+  competition: string;
+  season: string;
+  rank?: number;
 }

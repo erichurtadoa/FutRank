@@ -17,5 +17,8 @@
         public string? VenueSurface { get; set; }
         public string? VenueImage { get; set; }
         public string? VenueCity { get; set; }
+        public bool? Favourite { get; set; }
+        public bool? Upvote { get; set; }
+        public List<StandingDto>? Standings { get; set; }
     }
 }

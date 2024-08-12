@@ -8,7 +8,7 @@ namespace FutRank.Services.Interfaces
         IEnumerable<ClubDto> GetClubsAsync(ClubFilter filter);
         IEnumerable<ClubDto> GetClubsUserAsync(Guid userId, ClubFilter filter);
         Task<IEnumerable<ClubDto>> GetOnlyClubsUserAsync(Guid userId);
-        ClubDetailsDto GetClubByIdAsync(int id);
+        ClubDetailsDto GetClubByIdAsync(int id, Guid userId);
         Task VoteClub(bool upVote, Guid userId, int clubId);
         Task AddFavourite(Guid userId, int clubId);
     }

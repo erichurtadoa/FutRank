@@ -39,10 +39,10 @@ namespace FutRank.Services.Implementation
             return userClubsDto.OrderByDescending(u => u.Popularity);
         }
 
-        public ClubDetailsDto GetClubByIdAsync(int id)
+        public ClubDetailsDto GetClubByIdAsync(int id, Guid userId)
         {
             var club = _clubRepository.GetClubById(id);
-            return _mapper.MapClubtoDetailsDto(club);
+            return _mapper.MapClubtoDetailsDto(club, userId);
         }
 
         public async Task VoteClub(bool upVote, Guid userId, int clubId)

@@ -16,13 +16,32 @@ export class ClubDetailComponent implements OnInit{
     private router: Router,
     private route: ActivatedRoute,
     private clubService: ClubService,
-  ) {
+  ) {}
+
+  ngOnInit(): void {
+    this.getClub();
+  }
+
+  public getClub() {
     this.clubService.getClubById(Number(this.route.snapshot.paramMap.get('id'))).subscribe((data: ClubDetails) => {
       this.club = data;
     })
   }
 
-  ngOnInit(): void {
+  public upVote(vote: boolean, clubId: number) {
+    this.clubService.upVote(vote, clubId).subscribe(
+      response => {
+        this.getClub();
+      },
+      error => {}
+    )
+  }
 
+  public addFavourite(clubId: number) {
+    this.clubService.addFavourite(clubId).subscribe(
+      response => {
+        this.getClub();
+      }
+    )
   }
 }

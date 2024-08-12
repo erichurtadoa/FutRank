@@ -1,9 +1,9 @@
-<div class="club-details">
+<div *ngIf="club" class="club-details">
   <div class="club-logo-popularity">
     <img [src]="club.logo" alt="{{club.name}} logo">
     <div class="popularity">
       <mat-icon [ngStyle]="{color: '#fbc02d', 'font-size.px': 30}">star</mat-icon>
-      <p>{{club.founded}}</p>
+      <p>{{club.popularity}}</p>
     </div>
   </div>
   <div class="club-info">
@@ -12,14 +12,14 @@
     <p>Country: {{club.country}}</p>
   </div>
   <div class="club-actions">
-    <button mat-icon-button matTooltip="Upvote">
+    <button mat-icon-button matTooltip="Upvote" (click)="upVote(true, club.id)" [ngStyle]="{'color': club.upvote ? 'blue' : 'inherit'}">
       <mat-icon>thumb_up</mat-icon>
     </button>
-    <button mat-icon-button matTooltip="Downvote">
+    <button mat-icon-button matTooltip="Downvote" (click)="upVote(false, club.id)" [ngStyle]="{'color': club.upvote === false ? 'red' : 'inherit'}">
       <mat-icon>thumb_down</mat-icon>
     </button>
-    <button mat-icon-button matTooltip="Agregar a favoritos">
-      <mat-icon>favorite_border</mat-icon>
+    <button mat-icon-button matTooltip="Agregar a favoritos" (click)="addFavourite(club.id)" [color]="'warn'">
+      <mat-icon>{{ club.favourite ? 'favorite' : 'favorite_border' }}</mat-icon>
     </button>
   </div>
   <div class="venue-details">
@@ -34,5 +34,24 @@
     <div class="venue-image">
       <img [src]="club.venueImage" alt="{{club.venueName}} image">
     </div>
+  </div>
+  <div class="table-container">
+    <h2>Standings</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Competition</th>
+          <th>Season</th>
+          <th>Rank</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let standing of club.standings">
+          <td>{{ standing.competition }}</td>
+          <td>{{ standing.season }}</td>
+          <td>{{ standing.rank }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>

@@ -32,13 +32,18 @@ namespace FutRank.Repositories.Implementation
             {
                 query = query.Where(f => f.Country.Name.Contains(filter.Country));
             }
+
             return query.ToList().OrderByDescending(club => club.Popularity);
         }
 
         public Club GetClubById(int id)
         {
-            var club = _context.Clubs.Include(club => club.Venue)
+            var club = _context.Clubs
+                .Include(club => club.Venue)
                 .Include(club => club.Country)
+                .Include(club => club.UserClubs)
+                .Include(club => club.Standings)
+                    .ThenInclude(standing => standing.League)
                 .Where(club => club.Id == id)
                 .FirstOrDefault();
             return club;

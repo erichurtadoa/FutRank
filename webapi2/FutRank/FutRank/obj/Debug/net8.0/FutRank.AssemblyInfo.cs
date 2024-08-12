@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FutRank")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+86631d87c94e0925e54fa3c92d6dbaf48b33e8de")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bd2e67ebbaf8005772968bdebc3160d85c4c648f")]
 [assembly: System.Reflection.AssemblyProductAttribute("FutRank")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FutRank")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

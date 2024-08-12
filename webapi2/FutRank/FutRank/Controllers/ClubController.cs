@@ -43,7 +43,8 @@ namespace FutRank.Controllers
         [HttpGet("{id}")]
         public ClubDetailsDto GetClubById(int id)
         {
-            return _clubService.GetClubByIdAsync(id);
+            var userGuid = User.FindFirstValue(ClaimTypes.Sid) != null ? new Guid(User.FindFirstValue(ClaimTypes.Sid)) : new Guid();
+            return _clubService.GetClubByIdAsync(id, userGuid);
         }
 
         [HttpPost("Vote")]

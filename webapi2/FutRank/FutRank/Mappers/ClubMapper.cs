@@ -42,7 +42,7 @@ namespace FutRank.Mappers
             };
         }
 
-        public ClubDetailsDto MapClubtoDetailsDto(Club entity)
+        public ClubDetailsDto MapClubtoDetailsDto(Club entity, Guid userId)
         {
             return new ClubDetailsDto
             {
@@ -60,7 +60,20 @@ namespace FutRank.Mappers
                 VenueCapacity = entity.Venue?.Capacity,
                 VenueSurface = entity.Venue?.Surface,
                 VenueImage = entity.Venue?.Image,
-                VenueCity = entity.Venue?.City
+                VenueCity = entity.Venue?.City,
+                Favourite = entity.UserClubs.Where(x => x.UserId == userId).FirstOrDefault()?.Favourite,
+                Upvote = entity.UserClubs.Where(x => x.UserId == userId).FirstOrDefault()?.UpVote,
+                Standings = entity.Standings.Select(s => MapStandingToStandingDto(s)).ToList()
+            };
+        }
+
+        public StandingDto MapStandingToStandingDto(Standing entity)
+        {
+            return new StandingDto
+            {
+                Competition = entity.League.Name,
+                Season = entity.Season,
+                Rank = entity.Rank
             };
         }
     }
