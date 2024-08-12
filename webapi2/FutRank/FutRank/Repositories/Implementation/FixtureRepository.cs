@@ -43,6 +43,18 @@ namespace FutRank.Repositories.Implementation
             return await query.ToListAsync();
         }
 
+        public async Task<Fixture> GetFixtureByIdAsync(int id)
+        {
+             return await _context.Fixture
+            .Include(f => f.Venue)
+            .Include(f => f.League)
+            .Include(f => f.HomeClub)
+            .Include(f => f.AwayClub)
+            .Include(f => f.UserFixtures)
+            .Where(fixture => fixture.Id == id)
+            .FirstOrDefaultAsync();
+        }
+
         public async Task VoteFixtureAsync(UserFixtures userFixture)
         {
             var existedUser = await _context.UserFixtures.Where(x => x.UserId == userFixture.UserId && x.FixtureId == userFixture.FixtureId).FirstOrDefaultAsync();

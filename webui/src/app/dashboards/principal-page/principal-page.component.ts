@@ -6,6 +6,7 @@ import { VoteDialogComponent } from '../../dialogs/vote-dialog/vote-dialog.compo
 import { SessionService } from '../../services/session.service';
 import { FixtureFilter } from '../../models/fixture-filter';
 import { FixtureFilterDialogComponent } from '../../dialogs/fixture-filter-dialog/fixture-filter-dialog.component';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -20,7 +21,8 @@ export class PrincipalPageComponent {
 
   constructor(private fixtureService: FixtureService,
     public dialog: MatDialog,
-    private sessionService: SessionService) { }
+    private sessionService: SessionService,
+    private router: Router) { }
 
   ngOnInit(): void {
     if (this.fixtureFilter == null) {
@@ -57,6 +59,11 @@ export class PrincipalPageComponent {
         this.fixtureService.getFixtures(this.fixtureFilter);
       }
     });
+  }
+
+  public navigateToDetails(id: number) {
+    console.log(id);
+    this.router.navigate(['/matches', id]);
   }
 
   openVoteDialog(fixture: any): void {

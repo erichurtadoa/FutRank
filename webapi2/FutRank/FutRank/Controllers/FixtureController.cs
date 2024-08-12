@@ -42,6 +42,13 @@ namespace FutRank.Controllers
             return await _fixtureService.GetOnlyFixturesUserAsync(userId);
         }
 
+        [HttpGet("{id}")]
+        public async Task<FixtureDetailsDto> GetFixtureById(int id)
+        {
+            var userGuid = User.FindFirstValue(ClaimTypes.Sid) != null ? new Guid(User.FindFirstValue(ClaimTypes.Sid)) : new Guid();
+            return await _fixtureService.GetFixtureByIdAsync(id, userGuid);
+        }
+
         [HttpPost("Vote")]
         [Authorize]
         public async Task<IActionResult> VoteFixture([FromBody] int vote, int fixtureId)

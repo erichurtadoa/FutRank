@@ -8,6 +8,7 @@ import { VoteDialogComponent } from './dialogs/vote-dialog/vote-dialog.component
 import { ProfileComponent } from './details-pages/profile/profile.component';
 import { FixtureFilterDialogComponent } from './dialogs/fixture-filter-dialog/fixture-filter-dialog.component';
 import { ClubFilterDialogComponent } from './dialogs/club-filter-dialog/club-filter-dialog.component';
+import { FixtureDetailComponent } from './details-pages/fixture-detail/fixture-detail.component';
 
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -45,7 +46,8 @@ import { MatSelectModule } from '@angular/material/select';
     VoteDialogComponent,
     ProfileComponent,
     FixtureFilterDialogComponent,
-    ClubFilterDialogComponent
+    ClubFilterDialogComponent,
+    FixtureDetailComponent
   ],
   imports: [
     CommonModule,
