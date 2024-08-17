@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { SessionService } from '../services/session.service';
 import { LoginDialogComponent } from '../session/login-dialog/login-dialog.component';
 import { RegisterDialogComponent } from '../session/register-dialog/register-dialog.component';
+import { UserDetails } from '../models/userDetails';
 
 @Component({
   selector: 'app-screen-manager',
@@ -27,6 +28,10 @@ export class ScreenManagerComponent {
     this.router.navigateByUrl('clubes');
   }
 
+  navigateToForum() {
+    this.router.navigateByUrl('forum');
+  }
+
   openLoginDialog(): void {
     const dialogRef = this.dialog.open(LoginDialogComponent, {
       width: '400px'
@@ -46,7 +51,9 @@ export class ScreenManagerComponent {
   }
 
   navigateToProfile(): void {
-    this.router.navigateByUrl('profile');
+    this.sessionService.getUser().subscribe((data: UserDetails) => {
+      this.router.navigate(['/profile', data.username]);
+    })
   }
 
   logout(): void {

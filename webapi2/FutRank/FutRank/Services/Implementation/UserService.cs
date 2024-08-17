@@ -25,7 +25,8 @@ namespace FutRank.Services.Implementation
             var user = await _userRepository.GetUserDetailsAsync(userId);
             var fuser = user.UserFixtures;
             var userDto = _userMapper.MapUserToDto(user);
-            userDto.FavouriteClub = _clubMapper.MapClubtoDto(user.FavouriteClub);
+            if (user.FavouriteClub != null)
+                userDto.FavouriteClub = _clubMapper.MapClubtoDto(user.FavouriteClub);
             return userDto;
         }
     }

@@ -9,6 +9,9 @@ import { ProfileComponent } from './details-pages/profile/profile.component';
 import { FixtureFilterDialogComponent } from './dialogs/fixture-filter-dialog/fixture-filter-dialog.component';
 import { ClubFilterDialogComponent } from './dialogs/club-filter-dialog/club-filter-dialog.component';
 import { FixtureDetailComponent } from './details-pages/fixture-detail/fixture-detail.component';
+import { ForumListComponent } from './community/forum-list/forum-list.component';
+import { ForumDetailComponent } from './community/forum-detail/forum-detail.component';
+import { CreateThreadComponent } from './dialogs/create-thread/create-thread.component';
 
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -33,6 +36,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSelectModule } from '@angular/material/select';
+import { ForumService } from './services/community.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +51,10 @@ import { MatSelectModule } from '@angular/material/select';
     ProfileComponent,
     FixtureFilterDialogComponent,
     ClubFilterDialogComponent,
-    FixtureDetailComponent
+    FixtureDetailComponent,
+    ForumListComponent,
+    ForumDetailComponent,
+    CreateThreadComponent
   ],
   imports: [
     CommonModule,
@@ -72,6 +79,7 @@ import { MatSelectModule } from '@angular/material/select';
   ],
   providers: [
     SessionService,
+    ForumService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]

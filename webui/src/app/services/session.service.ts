@@ -44,6 +44,10 @@ export class SessionService {
     return this.http.get<UserDetails>(`${this.baseUrl}/User`);
   }
 
+  getUserByUsername(username: string): Observable<UserDetails> {
+    return this.http.get<UserDetails>(`${this.baseUrl}/User/${username}`);
+  }
+
   logout(): void {
     localStorage.removeItem('jwtToken');
     this.loggedIn.next(false);

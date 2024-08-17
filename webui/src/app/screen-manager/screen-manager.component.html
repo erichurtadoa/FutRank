@@ -8,7 +8,7 @@
       <button mat-menu-item (click)="navigateToMatches()">Top Matches</button>
       <button mat-menu-item (click)="navigateToClubes()">Top Clubes</button>
     </mat-menu>
-    <button mat-button color="primary">Community</button>
+    <button mat-button color="primary" (click)="navigateToForum()">Community</button>
   </div>
   <div class="right-buttons">
     <button *ngIf="!isLoggedIn" mat-button color="primary" (click)="openLoginDialog()">Login</button>

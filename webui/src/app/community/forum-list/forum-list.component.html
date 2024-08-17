@@ -1,0 +1,17 @@
+<div class="forum-container">
+  <div class="forum-header">
+    <h2>Forum</h2>
+  </div>
+
+  <div class="thread-list">
+    <div *ngFor="let thread of threads" class="thread-card" (click)="navigateToThread(thread.id)">
+      <h3>{{ thread.title }}</h3>
+      <p>Created by {{ thread.creator }} in {{ thread.createdAt | date:'dd/MM/yyyy' }}</p>
+      <p><strong>{{ thread.commentsCount }}</strong> comments</p>
+    </div>
+  </div>
+
+  <button class="create-thread-button" (click)="openCreateThreadDialog()">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>

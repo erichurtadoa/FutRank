@@ -4,6 +4,8 @@ import { ClubRankPageComponent } from './dashboards/club-rank-page/club-rank-pag
 import { ClubDetailComponent } from './details-pages/club-detail/club-detail.component';
 import { ProfileComponent } from './details-pages/profile/profile.component';
 import { FixtureDetailComponent } from './details-pages/fixture-detail/fixture-detail.component';
+import { ForumListComponent } from './community/forum-list/forum-list.component';
+import { ForumDetailComponent } from './community/forum-detail/forum-detail.component';
 
 
 export const routes: Routes = [
@@ -12,5 +14,7 @@ export const routes: Routes = [
   { path: 'matches/:id', component: FixtureDetailComponent },
   { path: 'clubes', component: ClubRankPageComponent },
   { path: 'clubes/:id', component: ClubDetailComponent },
-  { path: 'profile', component: ProfileComponent },
+  { path: 'profile/:username', component: ProfileComponent },
+  { path: 'forum', component: ForumListComponent },
+  { path: 'forum/:id', component: ForumDetailComponent },
 ];

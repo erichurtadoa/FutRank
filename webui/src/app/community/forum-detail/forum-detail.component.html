@@ -1,0 +1,18 @@
+<div *ngIf='thread' class="thread-container">
+  <div class="thread-header">
+    <h2>{{ thread.title }}</h2>
+    <p>Created by <a [routerLink]="['/profile', thread.creator]">{{ thread.creator }}</a> el {{ thread.createdAt | date:'dd/MM/yyyy' }}</p>
+  </div>
+
+  <div class="comments-section">
+    <div *ngFor="let comment of thread.comments" class="comment-card">
+      <p><strong><a [routerLink]="['/profile', comment.creator]">{{ comment.creator }}</a></strong> el {{ comment.createdAt | date:'dd/MM/yyyy HH:mm' }}</p>
+      <p>{{ comment.content }}</p>
+    </div>
+  </div>
+
+  <div class="add-comment-section">
+    <textarea placeholder="Write a comment..." [(ngModel)]="content"></textarea>
+    <button mat-button (click)="addComment()">Add comment</button>
+  </div>
+</div>

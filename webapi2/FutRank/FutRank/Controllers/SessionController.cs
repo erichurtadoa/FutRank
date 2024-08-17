@@ -103,6 +103,14 @@ namespace FutRank.Controllers
             return await _userService.GetUserDetailsAsync(userGuid);
         }
 
+        [HttpGet("User/{username}")]
+        public async Task<UserDetailsDto> GetUserDetailsByUsername(string username)
+        {
+            var userId = _context.UsersInfo.Where(u => u.Username == username).Select(u => u.Id).FirstOrDefault();
+
+            return await _userService.GetUserDetailsAsync(userId);
+        }
+
         [HttpPost("Set")]
         [Authorize]
         public IActionResult SetDate()
