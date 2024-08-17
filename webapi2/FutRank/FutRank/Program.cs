@@ -25,6 +25,7 @@ ConfigureRepositories(builder);
 builder.Services.AddScoped<ClubMapper>();
 builder.Services.AddScoped<FixtureMapper>();
 builder.Services.AddScoped<UserMapper>();
+builder.Services.AddScoped<ForumMapper>();
 
 builder.Services.AddCors(options =>
 {
@@ -135,6 +136,7 @@ void ConfigureServices(WebApplicationBuilder builder)
     builder.Services.AddScoped<IFixtureService, FixtureService>();
     builder.Services.AddScoped<ISessionService, SessionService>();
     builder.Services.AddScoped<IUserService, UserService>();
+    builder.Services.AddScoped<IForumService, ForumService>();
 }
 
 void ConfigureRepositories(WebApplicationBuilder builder)
@@ -144,4 +146,5 @@ void ConfigureRepositories(WebApplicationBuilder builder)
     builder.Services.AddScoped<IFixtureRepository, FixtureRepository>();
     builder.Services.AddScoped<ISessionRepository, SessionRepository>();
     builder.Services.AddScoped<IUserRepository, UserRepository>();
+    builder.Services.AddScoped<IForumRepository, ForumRepository>();
 }

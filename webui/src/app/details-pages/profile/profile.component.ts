@@ -5,6 +5,7 @@ import { FixtureService } from '../../services/fixture.service';
 import { ClubService } from '../../services/club.service';
 import { Fixture } from '../../models/fixture';
 import { Club } from '../../models/club';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -21,15 +22,23 @@ export class ProfileComponent {
 
   constructor(private sessionService: SessionService,
     private fixtureService: FixtureService,
-    private clubService: ClubService
-  ) {}
+    private clubService: ClubService,
+    private route: ActivatedRoute
+  ) {
+    route.params.subscribe(val => {
+      this.sessionService.getUserByUsername(String(this.route.snapshot.paramMap.get('username'))).subscribe((data: UserDetails) => {
+        this.user = data;
+        this.date = this.parseDate(this.user.dateSignUp);
+      })
+    });
+  }
 
-  ngOnInit(): void {
-    this.sessionService.getUser().subscribe((data: UserDetails) => {
-      this.user = data;
-      this.date = new Date(this.user.dateSignUp);
-      console.log(this.date);
-    })
+  parseDate(dateString: string): Date {
+    const [day, month, yearAndTime] = dateString.split('/');
+    const [year, time] = yearAndTime.split(' ');
+    const [hour, minute, second] = time.split(':');
+
+    return new Date(+year, +month - 1, +day, +hour, +minute, +second);
   }
 
   toggleTables() {

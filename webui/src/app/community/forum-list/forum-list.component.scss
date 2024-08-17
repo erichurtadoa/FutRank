@@ -1,0 +1,61 @@
+.forum-container {
+  margin: auto;
+  padding: 20px;
+  background-color: #f4f6f9;
+}
+
+.forum-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.thread-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.thread-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.thread-card:hover {
+  transform: translateY(-5px);
+}
+
+.thread-card h3 {
+  margin: 0;
+  color: #007bff;
+}
+
+.thread-card p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.create-thread-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.create-thread-button:hover {
+  background-color: #0056b3;
+}

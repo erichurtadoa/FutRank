@@ -24,6 +24,12 @@ namespace FutRank.Repositories.Implementation
                         .ThenInclude(c => c.Country)
                 .Include(u => u.UserFixtures)
                     .ThenInclude(f => f.Fixture)
+                        .ThenInclude(f => f.AwayClub)
+                .Include(u => u.UserFixtures)
+                    .ThenInclude(f => f.Fixture)
+                        .ThenInclude(f => f.HomeClub)
+                .Include(u => u.UserFixtures)
+                    .ThenInclude(f => f.Fixture)
                         .ThenInclude(f => f.League)
                 .Include(u => u.FavouriteClub)
                 .FirstOrDefaultAsync();
