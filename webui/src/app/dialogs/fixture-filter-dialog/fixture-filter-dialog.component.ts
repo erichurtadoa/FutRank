@@ -9,7 +9,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class FixtureFilterDialogComponent {
   filterForm: FormGroup;
-  leagues: string[] = ['', 'La Liga', 'Premier League', 'Category 3'];
+  leagues: string[] = ['', 'La Liga', 'Premier League', 'Serie A'];
   seasons:string[] = ['', '2023', '2022', '2021'];
 
   constructor(public dialogRef: MatDialogRef<FixtureFilterDialogComponent>,

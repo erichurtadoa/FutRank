@@ -1,4 +1,6 @@
-﻿namespace FutRank.Dtos
+﻿using FutRank.Models;
+
+namespace FutRank.Dtos
 {
     public class FixtureDetailsDto
     {
@@ -20,5 +22,6 @@
         public int? PenaltyAway { get; set; }
         public float? Rate { get; set; }
         public int? UserNote { get; set; }
+        public ICollection<CommentFixtureDto> Comments { get; set; }
     }
 }

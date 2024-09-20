@@ -1,3 +1,5 @@
+import { CommentFixture } from "./commentFixture";
+
 export interface FixtureDetails {
   id: number;
   referee?: string;
@@ -17,4 +19,5 @@ export interface FixtureDetails {
   PenaltyAway?: number;
   rate?: number;
   userNote?: number;
+  comments: CommentFixture[];
 }

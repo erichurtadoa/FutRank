@@ -61,5 +61,11 @@ namespace FutRank.Services.Implementation
 
             await _fixtureRepository.UpdateFixtureNoteAsync(fixtureId);
         }
+
+        public async Task<CommentFixtureDto> CreateCommentAsync(int id, string content, Guid userId)
+        {
+            var comment = await _fixtureRepository.CreateCommentAsync(id, content, userId);
+            return _mapper.MapCommentFixturetoDto(comment);
+        }
     }
 }

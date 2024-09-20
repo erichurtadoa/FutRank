@@ -30,7 +30,7 @@
           {{ fixture.season }}
         </td>
         <td>{{ fixture.date }}</td>
-        <td>{{ fixture.rate }}</td>
+        <td>{{ fixture.rate | number: '1.1-1' }}</td>
         <td>{{ fixture.userNote }}</td>
         <td>
           <div class="actions-container">

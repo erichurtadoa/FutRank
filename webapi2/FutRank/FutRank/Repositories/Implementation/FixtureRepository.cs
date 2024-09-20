@@ -51,6 +51,7 @@ namespace FutRank.Repositories.Implementation
             .Include(f => f.HomeClub)
             .Include(f => f.AwayClub)
             .Include(f => f.UserFixtures)
+            .Include(f => f.Comments)
             .Where(fixture => fixture.Id == id)
             .FirstOrDefaultAsync();
         }
@@ -58,12 +59,15 @@ namespace FutRank.Repositories.Implementation
         public async Task VoteFixtureAsync(UserFixtures userFixture)
         {
             var existedUser = await _context.UserFixtures.Where(x => x.UserId == userFixture.UserId && x.FixtureId == userFixture.FixtureId).FirstOrDefaultAsync();
+            var fixture = await _context.Fixture.Where(x => x.Id == userFixture.FixtureId).FirstOrDefaultAsync();
+            var user = await _context.UsersInfo.Where(x => x.Id == userFixture.UserId).FirstOrDefaultAsync();
 
             if (existedUser != null)
             {
                 if (userFixture.UserNote == null)
                 {
                     _context.UserFixtures.Remove(existedUser);
+                    user.FixtureTime -= fixture.Time;
                 }
                 else
                 {
@@ -74,6 +78,7 @@ namespace FutRank.Repositories.Implementation
             else
             {
                 _context.UserFixtures.Add(userFixture);
+                user.FixtureTime += fixture.Time;
             }
 
             _context.SaveChanges();
@@ -104,6 +109,24 @@ namespace FutRank.Repositories.Implementation
                 fixture.Rate = fixtureNote;
             }
             await _context.SaveChangesAsync();
+        }
+
+        public async Task<CommentFixture> CreateCommentAsync(int id, string content, Guid userId)
+        {
+            var user = _context.UsersInfo.Where(u => u.Id == userId).FirstOrDefault();
+            var comment = new CommentFixture
+            {
+                Content = content,
+                CreatedAt = DateTime.UtcNow,
+                Creator = user.Username,
+                FixtureId = id
+            };
+
+            _context.CommentFixture.Add(comment);
+
+            _context.SaveChanges();
+
+            return comment;
         }
     }
 }

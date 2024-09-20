@@ -8,5 +8,6 @@ namespace FutRank.Repositories.Interfaces
         Task<Fixture> GetFixtureByIdAsync(int id);
         Task VoteFixtureAsync(UserFixtures userFixtures);
         Task UpdateFixtureNoteAsync(int fixtureId);
+        Task<CommentFixture> CreateCommentAsync(int id, string content, Guid userId);
     }
 }

@@ -22,6 +22,7 @@ namespace FutRank.Models
         public virtual DbSet<UserFixtures> UserFixtures { get; set; }
         public virtual DbSet<ForumThread> ForumThread {  get; set; }
         public virtual DbSet<Comment> Comment { get; set; }
+        public virtual DbSet<CommentFixture> CommentFixture { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -117,6 +118,13 @@ namespace FutRank.Models
                 entity.HasOne(v => v.ForumThread)
                 .WithMany(c => c.Comments)
                 .HasForeignKey(v => v.ForumThreadId);
+            });
+
+            modelBuilder.Entity<CommentFixture>(entity => {
+                entity.HasKey(k => k.Id);
+                entity.HasOne(v => v.Fixture)
+                .WithMany(c => c.Comments)
+                .HasForeignKey(v => v.FixtureId);
             });
 
             base.OnModelCreating(modelBuilder);

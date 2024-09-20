@@ -41,6 +41,7 @@ builder.Services.AddCors(options =>
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<SampleDBContext>(options => options.UseSqlServer(connectionString));
 builder.Services.AddTransient<SampleDBContext>();
+    
 
 // Configurar Identity
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()

@@ -2,24 +2,24 @@
 <div mat-dialog-content>
   <mat-form-field appearance="fill">
     <mat-label>Username</mat-label>
-    <input matInput [(ngModel)]="userRegister.username" required>
+    <input matInput [(ngModel)]="userRegister.username" required autocomplete="nope">
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Email</mat-label>
-    <input matInput [(ngModel)]="userRegister.email" required>
+    <input matInput [(ngModel)]="userRegister.email" required autocomplete="nope">
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Password</mat-label>
-    <input matInput type="password" [(ngModel)]="userRegister.password" required>
+    <input matInput type="password" [(ngModel)]="userRegister.password" required autocomplete="new-password">
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Confirm Password</mat-label>
-    <input matInput type="password" [(ngModel)]="userRegister.confirmPassword" required>
+    <input matInput type="password" [(ngModel)]="userRegister.confirmPassword" required autocomplete="nope">
   </mat-form-field>
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onCancel()">Cancel</button>
-  <button mat-button (click)="onSignUp()">Login</button>
+  <button mat-button (click)="onSignUp()">Sign Up</button>
 </div>
 
 

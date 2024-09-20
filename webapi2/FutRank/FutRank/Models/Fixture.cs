@@ -20,6 +20,7 @@ namespace FutRank.Models
         public int? PenaltyHome { get; set; }
         public int? PenaltyAway { get; set; }
         public float? Rate { get; set; }
+        public int Time { get; set; }
 
         public League League { get; set; }
         public Venue Venue { get; set; }
@@ -27,5 +28,6 @@ namespace FutRank.Models
         public Club AwayClub { get; set; }
 
         public virtual ICollection<UserFixtures> UserFixtures { get; set; }
+        public ICollection<CommentFixture> Comments { get; set; }
     }
 }

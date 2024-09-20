@@ -36,7 +36,6 @@ namespace FutRank.Controllers
         }
 
         [HttpGet("UserFixtures/{userId}")]
-        [Authorize]
         public async Task<IEnumerable<FixtureDto>> GetUserFixtures(Guid userId)
         {
             return await _fixtureService.GetOnlyFixturesUserAsync(userId);
@@ -60,6 +59,20 @@ namespace FutRank.Controllers
             await _fixtureService.VoteFixture(vote, userGuid, fixtureId);
 
             return Ok();
+        }
+
+        [HttpPost("{id}/comments")]
+        [Authorize]
+        public async Task<CommentFixtureDto> CreateComment(int id, [FromBody] string content)
+        {
+            if (User.FindFirstValue(ClaimTypes.Sid) != null)
+            {
+                var userId = new Guid(User.FindFirstValue(ClaimTypes.Sid));
+                var comment = await _fixtureService.CreateCommentAsync(id, content, userId);
+
+                return comment;
+            }
+            throw new Exception();
         }
 
         [HttpPost("ConvertJson")]

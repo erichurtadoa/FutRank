@@ -10,5 +10,6 @@ namespace FutRank.Services.Interfaces
         Task<IEnumerable<FixtureDto>> GetOnlyFixturesUserAsync(Guid userId);
         Task<FixtureDetailsDto> GetFixtureByIdAsync(int id, Guid userId);
         Task VoteFixture(int vote, Guid userId, int fixtureId);
+        Task<CommentFixtureDto> CreateCommentAsync(int id, string content, Guid userId);
     }
 }

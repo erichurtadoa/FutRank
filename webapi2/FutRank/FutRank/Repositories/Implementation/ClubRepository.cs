@@ -99,25 +99,27 @@ namespace FutRank.Repositories.Implementation
         {
             if (await _context.UserClubs.Where(x => x.UserId == userClubs.UserId && x.Favourite && x.ClubId != userClubs.ClubId).FirstOrDefaultAsync() != null)
             {
-                return;
+                throw new Exception("you already have a favourite club");
             }
 
             var existedUser = await _context.UserClubs.Where(x => x.UserId == userClubs.UserId && x.ClubId == userClubs.ClubId).FirstOrDefaultAsync();
+            var user = await _context.UsersInfo.Where(x => x.Id == userClubs.UserId).FirstOrDefaultAsync();
 
             if (existedUser != null)
             {
                 existedUser.Favourite = !existedUser.Favourite;
+                if (existedUser.Favourite)
+                    user.FavouriteClubId = userClubs.ClubId;
+                else
+                    user.FavouriteClubId = null;
             }
 
             else
             {
                 userClubs.Favourite = true;
                 _context.UserClubs.Add(userClubs);
+                user.FavouriteClubId = userClubs.ClubId;
             }
-
-            var user = await _context.UsersInfo.Where(x => x.Id == userClubs.UserId).FirstOrDefaultAsync();
-
-            user.FavouriteClubId = existedUser.ClubId; 
 
             _context.SaveChanges();
         }

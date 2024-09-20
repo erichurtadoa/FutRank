@@ -13,6 +13,6 @@
 
   <div class="add-comment-section">
     <textarea placeholder="Write a comment..." [(ngModel)]="content"></textarea>
-    <button mat-button (click)="addComment()">Add comment</button>
+    <button mat-button [disabled]="!content" (click)="addComment()">Add comment</button>
   </div>
 </div>

@@ -5,6 +5,7 @@ import { Fixture } from '../models/fixture';
 import { Guid } from 'guid-typescript';
 import { FixtureFilter } from '../models/fixture-filter';
 import { FixtureDetails } from '../models/fixtureDetails';
+import { CommentFixture } from '../models/commentFixture';
 
 @Injectable({
   providedIn: 'root'
@@ -44,5 +45,12 @@ export class FixtureService {
 
   voteFixture(fixtureId: number, vote: number): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/Vote?fixtureId=${fixtureId}`, vote);
+  }
+
+  createcomments(fixtureId: number, content: string): Observable<CommentFixture> {
+    var body = JSON.stringify(content);
+    return this.http.post<CommentFixture>(`${this.baseUrl}/${fixtureId}/comments`, body, {
+      headers: { 'Content-Type': 'application/json' }
+    });
   }
 }

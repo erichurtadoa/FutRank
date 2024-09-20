@@ -6,6 +6,7 @@ import { SessionService } from '../../services/session.service';
 import { ClubFilterDialogComponent } from '../../dialogs/club-filter-dialog/club-filter-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { ClubFilter } from '../../models/club-filter';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-club-rank-page',
@@ -21,7 +22,8 @@ export class ClubRankPageComponent implements OnInit {
     private clubService: ClubService,
     private router: Router,
     private sessionService: SessionService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -78,6 +80,11 @@ export class ClubRankPageComponent implements OnInit {
     this.clubService.addFavourite(clubId).subscribe(
       response => {
         this.clubService.getClubs(this.clubFilter);
+      },
+      error => {
+        this.snackBar.open('You already have a favourite club', 'Close', {
+          duration: 5000,
+        });
       }
     )
   }

@@ -4,6 +4,7 @@ import { FixtureService } from '../../services/fixture.service';
 import { MatDialog } from '@angular/material/dialog';
 import { VoteDialogComponent } from '../../dialogs/vote-dialog/vote-dialog.component';
 import { FixtureDetails } from '../../models/fixtureDetails';
+import { CommentFixture } from '../../models/commentFixture';
 
 @Component({
   selector: 'app-fixture-detail',
@@ -12,6 +13,8 @@ import { FixtureDetails } from '../../models/fixtureDetails';
 })
 export class FixtureDetailComponent {
   public fixture: FixtureDetails;
+  content: string;
+  commentsFixture: CommentFixture[];
 
   constructor(
     private router: Router,
@@ -24,10 +27,11 @@ export class FixtureDetailComponent {
     this.getFixture();
   }
 
-  public getFixture() {
+  public getFixture(): void {
     this.fixtureService.getFixtureById(Number(this.route.snapshot.paramMap.get('id'))).subscribe((data: FixtureDetails) => {
       this.fixture = data;
       console.log(this.fixture);
+      console.log(this.fixture.comments.values);
     })
   }
 
@@ -53,5 +57,18 @@ export class FixtureDetailComponent {
         console.error('Error submitting vote:', error);
       }
     );
+  }
+
+  addComment(): void {
+    if (this.fixture) {
+      this.fixtureService.createcomments(this.fixture.id, this.content).subscribe(comments => {
+        console.log(comments);
+        if (!this.fixture!.comments) {
+          this.fixture!.comments = [];
+        }
+        this.fixture!.comments.push(comments);
+        this.content = '';
+      });
+    }
   }
 }

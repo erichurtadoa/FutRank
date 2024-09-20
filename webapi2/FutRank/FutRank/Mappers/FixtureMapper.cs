@@ -73,7 +73,20 @@ namespace FutRank.Mappers
                 PenaltyHome = entity.PenaltyHome,
                 PenaltyAway = entity.PenaltyAway,
                 Rate = entity.Rate,
-                UserNote = entity.UserFixtures.Where(x => x.UserId == userId).FirstOrDefault()?.UserNote
+                UserNote = entity.UserFixtures.Where(x => x.UserId == userId).FirstOrDefault()?.UserNote,
+                Comments = entity.Comments?.Select(c => MapCommentFixturetoDto(c)).ToArray()
+            };
+        }
+
+        public CommentFixtureDto MapCommentFixturetoDto(CommentFixture entity)
+        {
+            return new CommentFixtureDto
+            {
+                Id = entity.Id,
+                FixtureId = entity.FixtureId,
+                Creator = entity.Creator,
+                Content = entity.Content,
+                CreatedAt = entity.CreatedAt
             };
         }
 

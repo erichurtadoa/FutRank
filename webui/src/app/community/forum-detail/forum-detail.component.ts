@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ForumThread } from '../../models/forum-thread';
 import { ForumService } from '../../services/community.service';
-import { Comments } from '../../models/comment';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
