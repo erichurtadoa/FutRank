@@ -12,12 +12,10 @@ namespace FutRank.Controllers
     [Route("[controller]")]
     public class ForumController : ControllerBase
     {
-        private readonly SampleDBContext _context;
         private readonly IForumService _forumService;
 
-        public ForumController(SampleDBContext context, IForumService forumService)
+        public ForumController(IForumService forumService)
         {
-            _context = context;
             _forumService = forumService;
         }
 
